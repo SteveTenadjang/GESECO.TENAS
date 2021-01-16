@@ -103,6 +103,12 @@
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="GESECO.FORMS\FrmAddMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GESECO.FORMS\FrmAddMember.Designer.cs">
+      <DependentUpon>FrmAddMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="GESECO.FORMS\FrmAdminAuthentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GESECO.FORMS\FrmAddMember.resx">
+      <DependentUpon>FrmAddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GESECO.FORMS\FrmAdminAuthentification.resx">
       <DependentUpon>FrmAdminAuthentification.cs</DependentUpon>
