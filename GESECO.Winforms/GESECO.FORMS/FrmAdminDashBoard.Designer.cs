@@ -200,6 +200,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnAjoutMembre.Size = new System.Drawing.Size(156, 57);
             this.btnAjoutMembre.TabIndex = 70;
             this.btnAjoutMembre.Text = "Ajouter un Membre";
+            this.btnAjoutMembre.Click += new System.EventHandler(this.btnAjoutMembre_Click);
             // 
             // btnListeEtudiant
             // 

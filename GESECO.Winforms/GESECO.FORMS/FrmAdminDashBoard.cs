@@ -63,5 +63,11 @@ namespace GESECO.Winforms.GESECO.FORMS
             FrmCardList frm = new FrmCardList();
             OpenChildForm(frm);
         }
+
+        private void btnAjoutMembre_Click(object sender, EventArgs e)
+        {
+            FrmAddMember frm = new FrmAddMember();
+            OpenChildForm(frm);
+        }
     }
 }
