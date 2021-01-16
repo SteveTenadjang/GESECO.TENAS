@@ -24,9 +24,9 @@ namespace GESECO.Winforms
         {
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            Ecole ee = new Ecole("IUC", "MyIUC@gmail.com", 653051037, "Logbessou", @"‪C:\Users\hp\OneDrive\Pictures\LogoTenas");
-            EcoleBLO eeblo = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
-            eeblo.CreateCEcole(ee);
+            //Ecole ee = new Ecole("IUC", "MyIUC@gmail.com", 653051037, "Logbessou", @"‪C:\Users\hp\OneDrive\Pictures\LogoTenas");
+            //EcoleBLO eeblo = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            //eeblo.CreateCEcole(ee);
             frm = new FrmMenu();
         }
         void MenuLoad()
