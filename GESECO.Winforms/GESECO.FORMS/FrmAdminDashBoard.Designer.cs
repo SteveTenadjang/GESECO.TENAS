@@ -220,6 +220,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnListeEtudiant.Size = new System.Drawing.Size(156, 57);
             this.btnListeEtudiant.TabIndex = 78;
             this.btnListeEtudiant.Text = "Liste des Etudiants";
+            this.btnListeEtudiant.Click += new System.EventHandler(this.btnListeEtudiant_Click);
             // 
             // guna2CustomGradientPanel1
             // 
