@@ -163,6 +163,12 @@
     <Compile Include="FrmParametre.Designer.cs">
       <DependentUpon>FrmParametre.cs</DependentUpon>
     </Compile>
+    <Compile Include="GESECO.FORMS\FrmListEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GESECO.FORMS\FrmListEtudiant.Designer.cs">
+      <DependentUpon>FrmListEtudiant.cs</DependentUpon>
+    </Compile>
     <Compile Include="GESECO.FORMS\FrmPayement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmParametre.resx">
       <DependentUpon>FrmParametre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GESECO.FORMS\FrmListEtudiant.resx">
+      <DependentUpon>FrmListEtudiant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GESECO.FORMS\FrmPayement.resx">
       <DependentUpon>FrmPayement.cs</DependentUpon>
