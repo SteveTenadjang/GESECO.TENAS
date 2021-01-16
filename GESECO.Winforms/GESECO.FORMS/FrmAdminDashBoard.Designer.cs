@@ -34,16 +34,16 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lbCarteEtudiant = new MetroFramework.Controls.MetroLabel();
             this.lbCertificate = new MetroFramework.Controls.MetroLabel();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCertificate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCarte = new Guna.UI2.WinForms.Guna2Button();
             this.btnPayement = new Guna.UI2.WinForms.Guna2Button();
             this.btnAjoutEtudiant = new Guna.UI2.WinForms.Guna2Button();
             this.btnAjoutMembre = new Guna.UI2.WinForms.Guna2Button();
             this.btnListeEtudiant = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pnlBack.SuspendLayout();
@@ -79,8 +79,8 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.guna2GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2GroupBox1.Controls.Add(this.lbCarteEtudiant);
             this.guna2GroupBox1.Controls.Add(this.lbCertificate);
-            this.guna2GroupBox1.Controls.Add(this.guna2Button5);
-            this.guna2GroupBox1.Controls.Add(this.guna2Button6);
+            this.guna2GroupBox1.Controls.Add(this.btnCertificate);
+            this.guna2GroupBox1.Controls.Add(this.btnCarte);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(389, 156);
@@ -108,39 +108,41 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.lbCertificate.TabIndex = 5;
             this.lbCertificate.Text = "5";
             // 
-            // guna2Button5
+            // btnCertificate
             // 
-            this.guna2Button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnCertificate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button5.BorderRadius = 10;
-            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
-            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(16, 51);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(208, 43);
-            this.guna2Button5.TabIndex = 5;
-            this.guna2Button5.Text = "Certificate de scolarite";
+            this.btnCertificate.BorderRadius = 10;
+            this.btnCertificate.CheckedState.Parent = this.btnCertificate;
+            this.btnCertificate.CustomImages.Parent = this.btnCertificate;
+            this.btnCertificate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCertificate.ForeColor = System.Drawing.Color.White;
+            this.btnCertificate.HoverState.Parent = this.btnCertificate;
+            this.btnCertificate.Location = new System.Drawing.Point(16, 51);
+            this.btnCertificate.Name = "btnCertificate";
+            this.btnCertificate.ShadowDecoration.Parent = this.btnCertificate;
+            this.btnCertificate.Size = new System.Drawing.Size(208, 43);
+            this.btnCertificate.TabIndex = 5;
+            this.btnCertificate.Text = "Certificate de scolarite";
+            this.btnCertificate.Click += new System.EventHandler(this.btnCertificate_Click);
             // 
-            // guna2Button6
+            // btnCarte
             // 
-            this.guna2Button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnCarte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button6.BorderRadius = 10;
-            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
-            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(16, 122);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(208, 38);
-            this.guna2Button6.TabIndex = 6;
-            this.guna2Button6.Text = "Carte Etudiant";
+            this.btnCarte.BorderRadius = 10;
+            this.btnCarte.CheckedState.Parent = this.btnCarte;
+            this.btnCarte.CustomImages.Parent = this.btnCarte;
+            this.btnCarte.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCarte.ForeColor = System.Drawing.Color.White;
+            this.btnCarte.HoverState.Parent = this.btnCarte;
+            this.btnCarte.Location = new System.Drawing.Point(16, 122);
+            this.btnCarte.Name = "btnCarte";
+            this.btnCarte.ShadowDecoration.Parent = this.btnCarte;
+            this.btnCarte.Size = new System.Drawing.Size(208, 38);
+            this.btnCarte.TabIndex = 6;
+            this.btnCarte.Text = "Carte Etudiant";
+            this.btnCarte.Click += new System.EventHandler(this.btnCarte_Click);
             // 
             // btnPayement
             // 
@@ -235,6 +237,27 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(397, 97);
             this.guna2CustomGradientPanel1.TabIndex = 75;
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(147, 32);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(173, 32);
+            this.guna2HtmlLabel1.TabIndex = 0;
+            this.guna2HtmlLabel1.Text = "Administration";
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Separator1.FillColor = System.Drawing.Color.Brown;
+            this.guna2Separator1.Location = new System.Drawing.Point(22, 129);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(591, 21);
+            this.guna2Separator1.TabIndex = 77;
+            // 
             // guna2Button4
             // 
             this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
@@ -259,27 +282,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.guna2Button4.Size = new System.Drawing.Size(95, 75);
             this.guna2Button4.TabIndex = 1;
             this.guna2Button4.UseTransparentBackground = true;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(147, 32);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(173, 32);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Administration";
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator1.FillColor = System.Drawing.Color.Brown;
-            this.guna2Separator1.Location = new System.Drawing.Point(22, 129);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(591, 21);
-            this.guna2Separator1.TabIndex = 77;
             // 
             // pictureBox2
             // 
@@ -331,8 +333,8 @@ namespace GESECO.Winforms.GESECO.FORMS
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private MetroFramework.Controls.MetroLabel lbCarteEtudiant;
         private MetroFramework.Controls.MetroLabel lbCertificate;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button btnCarte;
+        private Guna.UI2.WinForms.Guna2Button btnCertificate;
         private Guna.UI2.WinForms.Guna2Button btnPayement;
         private Guna.UI2.WinForms.Guna2Button btnAjoutEtudiant;
         private Guna.UI2.WinForms.Guna2Button btnAjoutMembre;

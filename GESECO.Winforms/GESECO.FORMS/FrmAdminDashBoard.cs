@@ -51,5 +51,17 @@ namespace GESECO.Winforms.GESECO.FORMS
         {
 
         }
+
+        private void btnCertificate_Click(object sender, EventArgs e)
+        {
+            FrmCertificateList frm = new FrmCertificateList();
+            OpenChildForm(frm);
+        }
+
+        private void btnCarte_Click(object sender, EventArgs e)
+        {
+            FrmCardList frm = new FrmCardList();
+            OpenChildForm(frm);
+        }
     }
 }
