@@ -93,46 +93,56 @@ namespace GESECO.Winforms
         {
             if (btnTheme.Text == "Light Mode")
             {
-                BackColor = Color.White;
-                pnlMenu.BackColor = Color.Teal;
-                this.ForeColor = btnParametres.FillColor = btnAide.FillColor = btnAboutUs.FillColor = Color.Teal;
-                pnlHead.BackColor = Color.Teal;
-                btnClose.FillColor = Color.Teal;
-                btnMaximize.FillColor = Color.Teal;
-                btnMinimized.FillColor = Color.Teal;
-                cbLanguage.BackColor = Color.Teal;
-
-                frm.btnMenu.FillColor = Color.Teal;
-                frm.btnAdminstration.FillColor2 = frm.btnAuthentification.FillColor2 = frm.btnCaisse.FillColor2 = Color.Teal;
-                frm.btnEtat.FillColor2 = frm.btnInfoEdit.FillColor2 = frm.btnInscription.FillColor2 = frm.btnListeEtudiant.FillColor2 = frm.btnPayement.FillColor2 = Color.Teal;
-
-                frm.pnlMenuBackground.FillColor2 = Color.DarkGray;
-                frm.pnlMenuBackground.FillColor = Color.Teal;
-                btnTheme.Text = "Dark Mode";
-                btnTheme.CustomImages.Image = Resources.icons8_moon_symbol_60;
+                LightMode();
             }
             else
             {
-                BackColor = Color.DarkGray;
-                pnlParent.FillColor = Color.DimGray;
-                pnlParent.FillColor2 = Color.Black;
-                pnlMenu.BackColor = Color.Black;
-                this.ForeColor = btnParametres.FillColor = btnAide.FillColor = btnAboutUs.FillColor = Color.Black;
-                pnlHead.BackColor = Color.Black;
-                btnClose.FillColor = Color.Black;
-                btnMaximize.FillColor = Color.Black;
-                btnMinimized.FillColor = Color.Black;
-                cbLanguage.BackColor = Color.Black;
-
-                frm.btnMenu.FillColor = Color.CornflowerBlue;
-                frm.btnAdminstration.FillColor2 = frm.btnAuthentification.FillColor2 = frm.btnCaisse.FillColor2 = Color.Black;
-                frm.btnEtat.FillColor2 = frm.btnInfoEdit.FillColor2 = frm.btnInscription.FillColor2 = frm.btnListeEtudiant.FillColor2 = frm.btnPayement.FillColor2 = Color.Black;
-
-                frm.pnlMenuBackground.FillColor = col1;
-                frm.pnlMenuBackground.FillColor2 = col2;
-                btnTheme.Text = "Light Mode";
-                btnTheme.CustomImages.Image = Resources.icons8_sun_48;
+                DarkMode();
             }
+        }
+
+        private void DarkMode()
+        {
+            BackColor = Color.DarkGray;
+            pnlParent.FillColor = Color.DimGray;
+            pnlParent.FillColor2 = Color.Black;
+            pnlMenu.BackColor = Color.Black;
+            this.ForeColor = btnParametres.FillColor = btnAide.FillColor = btnAboutUs.FillColor = Color.Black;
+            pnlHead.BackColor = Color.Black;
+            btnClose.FillColor = Color.Black;
+            btnMaximize.FillColor = Color.Black;
+            btnMinimized.FillColor = Color.Black;
+            cbLanguage.BackColor = Color.Black;
+
+            frm.btnMenu.FillColor = Color.CornflowerBlue;
+            frm.btnAdminstration.FillColor2 = frm.btnAuthentification.FillColor2 = frm.btnCaisse.FillColor2 = Color.Black;
+            frm.btnEtat.FillColor2 = frm.btnInfoEdit.FillColor2 = frm.btnInscription.FillColor2 = frm.btnListeEtudiant.FillColor2 = frm.btnPayement.FillColor2 = Color.Black;
+
+            frm.pnlMenuBackground.FillColor = col1;
+            frm.pnlMenuBackground.FillColor2 = col2;
+            btnTheme.Text = "Light Mode";
+            btnTheme.CustomImages.Image = Resources.icons8_sun_48;
+        }
+
+        private void LightMode()
+        {
+            BackColor = Color.White;
+            pnlMenu.BackColor = Color.Teal;
+            this.ForeColor = btnParametres.FillColor = btnAide.FillColor = btnAboutUs.FillColor = Color.Teal;
+            pnlHead.BackColor = Color.Teal;
+            btnClose.FillColor = Color.Teal;
+            btnMaximize.FillColor = Color.Teal;
+            btnMinimized.FillColor = Color.Teal;
+            cbLanguage.BackColor = Color.Teal;
+
+            frm.btnMenu.FillColor = Color.Teal;
+            frm.btnAdminstration.FillColor2 = frm.btnAuthentification.FillColor2 = frm.btnCaisse.FillColor2 = Color.Teal;
+            frm.btnEtat.FillColor2 = frm.btnInfoEdit.FillColor2 = frm.btnInscription.FillColor2 = frm.btnListeEtudiant.FillColor2 = frm.btnPayement.FillColor2 = Color.Teal;
+
+            frm.pnlMenuBackground.FillColor2 = Color.DarkGray;
+            frm.pnlMenuBackground.FillColor = Color.Teal;
+            btnTheme.Text = "Dark Mode";
+            btnTheme.CustomImages.Image = Resources.icons8_moon_symbol_60;
         }
     }
 }
