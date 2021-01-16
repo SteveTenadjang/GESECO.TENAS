@@ -127,6 +127,18 @@
     <Compile Include="GESECO.FORMS\FrmCaissiere.Designer.cs">
       <DependentUpon>FrmCaissiere.cs</DependentUpon>
     </Compile>
+    <Compile Include="GESECO.FORMS\FrmCardList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GESECO.FORMS\FrmCardList.Designer.cs">
+      <DependentUpon>FrmCardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GESECO.FORMS\FrmCertificateList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GESECO.FORMS\FrmCertificateList.Designer.cs">
+      <DependentUpon>FrmCertificateList.cs</DependentUpon>
+    </Compile>
     <Compile Include="GESECO.FORMS\FrmInscription.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GESECO.FORMS\FrmCaissiere.resx">
       <DependentUpon>FrmCaissiere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GESECO.FORMS\FrmCardList.resx">
+      <DependentUpon>FrmCardList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GESECO.FORMS\FrmCertificateList.resx">
+      <DependentUpon>FrmCertificateList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GESECO.FORMS\FrmInscription.resx">
       <DependentUpon>FrmInscription.cs</DependentUpon>
