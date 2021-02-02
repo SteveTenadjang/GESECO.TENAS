@@ -30,7 +30,6 @@ namespace GESECO.BLL
         {
             return FiliereRepo.Find();
         }
-
         public IEnumerable<Filiere> GetBy(Func<Filiere, bool> predicate)
         {
             return FiliereRepo.Find(predicate);

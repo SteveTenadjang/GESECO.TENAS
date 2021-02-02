@@ -15,7 +15,6 @@ namespace GESECO.DAL
         private readonly string FILE_NAME = $@"{typeof(T).Name}.json";
         private readonly string dbFolder;
         private readonly FileInfo file;
-        private static readonly T data;
 
 
         public DataDAO(string dbFolder)
@@ -113,10 +112,6 @@ namespace GESECO.DAL
         public IEnumerable<T> Find(Func<T, bool> predicate)
         {
             return new List<T>(datas.Where(predicate).ToArray());
-        }
-        public T Get()
-        {
-            return data;
         }
     }
 }

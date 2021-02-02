@@ -9,6 +9,7 @@ namespace GESECO.BO
     public class Admin : Personne
     {
         public string Poste { get; private set; }
+        public string PassWord { get; private set; }
         public DateTime DateEmbauche { get; private set; }
 
         public Admin() : base()
@@ -16,11 +17,12 @@ namespace GESECO.BO
 
         }
 
-        public Admin(string nom, string prenom, long contact, string adresse, string email, byte[] photo, DateTime dateNaissance, string lieuNaissance, string sexe, string poste, DateTime dateEmbauche)
+        public Admin(string nom, string prenom, long contact, string adresse, string email, byte[] photo, DateTime dateNaissance, string lieuNaissance, string sexe, string poste, DateTime dateEmbauche,string password)
             : base(nom, prenom, contact, adresse, email, photo, dateNaissance, lieuNaissance, sexe)
         {
             this.Poste = poste;
             this.DateEmbauche = dateEmbauche;
+            this.PassWord = password;
         }
 
         public Admin(string nom, string prenom, long contact, string adresse, string email, byte[] photo, DateTime dateNaissance, string lieuNaissance, string sexe, Admin a)
@@ -28,6 +30,8 @@ namespace GESECO.BO
         {
             this.Poste = a.Poste;
             this.DateEmbauche = a.DateEmbauche;
+            this.PassWord = a.PassWord;
+
         }
 
         public override bool Equals(object obj)

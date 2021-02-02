@@ -10,25 +10,22 @@ namespace GESECO.BO
     {
         public string Intituler { get; set; }
         public double Pension { get; set; }
-        public string[] Specialite { get; set; }
 
         public Filiere()
         {
 
         }
 
-        public Filiere(string intituler, double pension, string[] specialite)
+        public Filiere(string intituler, double pension)
         {
             Intituler = intituler;
             Pension = pension;
-            Specialite = specialite;
         }
 
         public Filiere(Filiere f)
         {
             Intituler = f.Intituler;
             Pension = f.Pension;
-            Specialite = f.Specialite;
         }
 
         public override bool Equals(object obj)

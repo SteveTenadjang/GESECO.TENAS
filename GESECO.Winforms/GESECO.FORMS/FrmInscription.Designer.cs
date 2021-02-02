@@ -107,7 +107,7 @@ namespace GESECO.Winforms
             // 
             this.pbInscription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbInscription.Image = ((System.Drawing.Image)(resources.GetObject("pbInscription.Image")));
-            this.pbInscription.Location = new System.Drawing.Point(722, 167);
+            this.pbInscription.Location = new System.Drawing.Point(722, 205);
             this.pbInscription.Name = "pbInscription";
             this.pbInscription.Size = new System.Drawing.Size(159, 150);
             this.pbInscription.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -289,9 +289,9 @@ namespace GESECO.Winforms
             // 
             // lblFiliere
             // 
-            this.lblFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFiliere.AutoSize = true;
-            this.lblFiliere.Location = new System.Drawing.Point(718, 333);
+            this.lblFiliere.Location = new System.Drawing.Point(473, 180);
             this.lblFiliere.Name = "lblFiliere";
             this.lblFiliere.Size = new System.Drawing.Size(72, 24);
             this.lblFiliere.TabIndex = 101;
@@ -575,7 +575,7 @@ namespace GESECO.Winforms
             this.picClose.ForeColor = System.Drawing.Color.White;
             this.picClose.HoverState.Parent = this.picClose;
             this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(837, 117);
+            this.picClose.Location = new System.Drawing.Point(837, 155);
             this.picClose.Name = "picClose";
             this.picClose.ShadowDecoration.Parent = this.picClose;
             this.picClose.Size = new System.Drawing.Size(44, 44);
@@ -585,15 +585,12 @@ namespace GESECO.Winforms
             // 
             // cbFiliere
             // 
-            this.cbFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFiliere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFiliere.FormattingEnabled = true;
-            this.cbFiliere.Items.AddRange(new object[] {
-            "PAM",
-            "RSI"});
-            this.cbFiliere.Location = new System.Drawing.Point(722, 360);
+            this.cbFiliere.Location = new System.Drawing.Point(477, 207);
             this.cbFiliere.Name = "cbFiliere";
-            this.cbFiliere.Size = new System.Drawing.Size(159, 32);
+            this.cbFiliere.Size = new System.Drawing.Size(207, 32);
             this.cbFiliere.Sorted = true;
             this.cbFiliere.TabIndex = 0;
             this.cbFiliere.TabStop = false;

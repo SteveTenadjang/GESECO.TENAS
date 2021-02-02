@@ -11,8 +11,6 @@ namespace GESECO.BO
         public string Matricule { get; set; }
         public string FIntituler { get; set; }
 
-        //Todo connect to filiere
-
         public Etudiant() : base()
         {
 

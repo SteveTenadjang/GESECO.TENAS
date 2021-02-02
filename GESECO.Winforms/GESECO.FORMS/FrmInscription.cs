@@ -13,10 +13,13 @@ namespace GESECO.Winforms
         private Action callback;
         private Etudiant oldEtudiant = null;
         private Image img;
+        private SpecialiteBLO specialiteBLO;
+
 
         public FrmInscription()
         {
             InitializeComponent();
+            specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
         public FrmInscription(Action callback) : this()
         {
@@ -224,6 +227,10 @@ namespace GESECO.Winforms
         private void FrmInscription_Load(object sender, EventArgs e)
         {
             img = pbInscription.Image;
+
+
+            cbFiliere.DataSource = specialiteBLO.GetAllSpecialite();
+            cbFiliere.DisplayMember = "Intituler";
         }
     }
 }

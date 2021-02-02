@@ -50,6 +50,7 @@
     <Compile Include="FiliereBLO.cs" />
     <Compile Include="PayementBLO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecialiteBLO.cs" />
     <Compile Include="TypingException.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,14 +12,14 @@ namespace GESECO.BO
         public string Email { get; private set; }
         public long Contact { get; private set; }
         public string Addresse { get; private set; }
-        public string Logo { get; set; }
+        public byte[] Logo { get; set; }
 
         public Ecole()
         {
 
         }
 
-        public Ecole(string nom, string email, long contact, string addresse, string logo)
+        public Ecole(string nom, string email, long contact, string addresse, byte[] logo)
         {
             Nom = nom;
             Email = email;

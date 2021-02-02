@@ -17,8 +17,8 @@ namespace GESECO.Winforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmHome());
             Application.Run(new FrmAuthentfication());
+            //Application.Run(new FrmSchool());
         }
     }
 }

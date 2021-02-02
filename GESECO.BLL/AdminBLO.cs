@@ -42,5 +42,9 @@ namespace GESECO.BLL
             AdminRepo.Set(oldAdmin, newAdmin);
         }
 
+        public IEnumerable<Admin> ConfirmPassword(string password)
+        {
+            return AdminRepo.Find(x => x.PassWord == password);
+        }
     }
 }

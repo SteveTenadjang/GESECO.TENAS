@@ -29,8 +29,8 @@ namespace GESECO.Winforms.GESECO.FORMS
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddMember));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.tbRecherche = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,18 +38,16 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnEnregistrer = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtMDP = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtPoste = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtNomComplet = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -62,7 +60,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.FillColor = System.Drawing.Color.Teal;
             this.guna2Separator1.FillThickness = 3;
-            this.guna2Separator1.Location = new System.Drawing.Point(33, 288);
+            this.guna2Separator1.Location = new System.Drawing.Point(33, 255);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(494, 10);
             this.guna2Separator1.TabIndex = 81;
@@ -85,7 +83,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.tbRecherche.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbRecherche.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRecherche.HoverState.Parent = this.tbRecherche;
-            this.tbRecherche.Location = new System.Drawing.Point(149, 304);
+            this.tbRecherche.Location = new System.Drawing.Point(149, 281);
             this.tbRecherche.Name = "tbRecherche";
             this.tbRecherche.PasswordChar = '\0';
             this.tbRecherche.PlaceholderText = "";
@@ -98,7 +96,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 309);
+            this.label1.Location = new System.Drawing.Point(29, 286);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 24);
             this.label1.TabIndex = 79;
@@ -114,10 +112,10 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnAnnuler.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnuler.ForeColor = System.Drawing.Color.White;
             this.btnAnnuler.HoverState.Parent = this.btnAnnuler;
-            this.btnAnnuler.Location = new System.Drawing.Point(270, 484);
+            this.btnAnnuler.Location = new System.Drawing.Point(315, 474);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.ShadowDecoration.Parent = this.btnAnnuler;
-            this.btnAnnuler.Size = new System.Drawing.Size(257, 45);
+            this.btnAnnuler.Size = new System.Drawing.Size(212, 45);
             this.btnAnnuler.TabIndex = 77;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
@@ -131,10 +129,10 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnEnregistrer.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnregistrer.ForeColor = System.Drawing.Color.White;
             this.btnEnregistrer.HoverState.Parent = this.btnEnregistrer;
-            this.btnEnregistrer.Location = new System.Drawing.Point(33, 484);
+            this.btnEnregistrer.Location = new System.Drawing.Point(33, 474);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.ShadowDecoration.Parent = this.btnEnregistrer;
-            this.btnEnregistrer.Size = new System.Drawing.Size(180, 45);
+            this.btnEnregistrer.Size = new System.Drawing.Size(231, 45);
             this.btnEnregistrer.TabIndex = 76;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
@@ -167,6 +165,33 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(358, 121);
             this.guna2CustomGradientPanel1.TabIndex = 74;
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderColor = System.Drawing.Color.Teal;
+            this.guna2Button1.BorderRadius = 24;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.CheckedState.Image")));
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Teal;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageSize = new System.Drawing.Size(70, 70);
+            this.guna2Button1.Location = new System.Drawing.Point(3, 23);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(95, 75);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.UseTransparentBackground = true;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "NOM ";
@@ -177,8 +202,8 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -190,7 +215,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(33, 346);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 326);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(494, 132);
             this.dataGridView1.TabIndex = 73;
@@ -200,48 +225,11 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.Column2.HeaderText = "POSTE";
             this.Column2.Name = "Column2";
             // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(33, 235);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(136, 24);
-            this.guna2HtmlLabel3.TabIndex = 72;
-            this.guna2HtmlLabel3.Text = "Mot de passe :";
-            // 
-            // txtMDP
-            // 
-            this.txtMDP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMDP.BorderColor = System.Drawing.Color.Teal;
-            this.txtMDP.BorderRadius = 15;
-            this.txtMDP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMDP.DefaultText = "";
-            this.txtMDP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMDP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMDP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMDP.DisabledState.Parent = this.txtMDP;
-            this.txtMDP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMDP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMDP.FocusedState.Parent = this.txtMDP;
-            this.txtMDP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMDP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMDP.HoverState.Parent = this.txtMDP;
-            this.txtMDP.Location = new System.Drawing.Point(175, 235);
-            this.txtMDP.Name = "txtMDP";
-            this.txtMDP.PasswordChar = '*';
-            this.txtMDP.PlaceholderText = "";
-            this.txtMDP.SelectedText = "";
-            this.txtMDP.ShadowDecoration.Parent = this.txtMDP;
-            this.txtMDP.Size = new System.Drawing.Size(352, 29);
-            this.txtMDP.TabIndex = 71;
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(107, 205);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(107, 214);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(62, 24);
             this.guna2HtmlLabel2.TabIndex = 70;
@@ -265,7 +253,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.txtPoste.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPoste.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPoste.HoverState.Parent = this.txtPoste;
-            this.txtPoste.Location = new System.Drawing.Point(175, 200);
+            this.txtPoste.Location = new System.Drawing.Point(175, 209);
             this.txtPoste.Name = "txtPoste";
             this.txtPoste.PasswordChar = '\0';
             this.txtPoste.PlaceholderText = "";
@@ -334,33 +322,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.Teal;
-            this.guna2Button1.BorderRadius = 24;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.CheckedState.Image")));
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Teal;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageSize = new System.Drawing.Size(70, 70);
-            this.guna2Button1.Location = new System.Drawing.Point(3, 23);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(95, 75);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.UseTransparentBackground = true;
-            // 
             // FrmAddMember
             // 
             this.AcceptButton = this.btnEnregistrer;
@@ -378,8 +339,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.txtMDP);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.txtPoste);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -412,8 +371,6 @@ namespace GESECO.Winforms.GESECO.FORMS
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2TextBox txtMDP;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox txtPoste;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
