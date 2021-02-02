@@ -30,7 +30,7 @@ namespace GESECO.Winforms.GESECO.FORMS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListEtudiant));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -191,8 +191,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDelete.BorderRadius = 20;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
@@ -206,7 +205,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnDelete.Location = new System.Drawing.Point(182, 453);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(218, 45);
+            this.btnDelete.Size = new System.Drawing.Size(236, 45);
             this.btnDelete.TabIndex = 86;
             this.btnDelete.Text = "Delete";
             // 
@@ -216,8 +215,8 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.dgvEtudiantInscrit.AllowUserToDeleteRows = false;
             this.dgvEtudiantInscrit.AllowUserToOrderColumns = true;
             this.dgvEtudiantInscrit.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
-            this.dgvEtudiantInscrit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dgvEtudiantInscrit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEtudiantInscrit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -292,7 +291,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmListEtudiant";
             this.Text = "FrmListEtudiant";
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

@@ -43,11 +43,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -59,6 +54,11 @@ namespace GESECO.Winforms.GESECO.FORMS
 
             if (!char.IsDigit(ch) && ch != 8)
                 e.Handled = true;
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

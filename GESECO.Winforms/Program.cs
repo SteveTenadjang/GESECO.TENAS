@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GESECO.Winforms.GESECO.FORMS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace GESECO.Winforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmHome());
+            //Application.Run(new FrmHome());
+            Application.Run(new FrmAuthentfication());
         }
     }
 }

@@ -31,14 +31,10 @@ namespace GESECO.Winforms
 
         private void btnAdminstration_Click(object sender, EventArgs e)
         {
-            FrmAdminAuthentification frm = new FrmAdminAuthentification();
-            OpenChildForm(frm);
         }
 
         private void btnCaisse_Click(object sender, EventArgs e)
         {
-            FrmAdminAuthentification frm = new FrmAdminAuthentification();
-            OpenChildForm(frm);
         }
 
         private void btnPayement_Click(object sender, EventArgs e)
@@ -49,8 +45,6 @@ namespace GESECO.Winforms
 
         private void btnAuthentification_Click(object sender, EventArgs e)
         {
-            FrmAutentificationEtudiant frm = new FrmAutentificationEtudiant();
-            OpenChildForm(frm);
         }
     }
 }

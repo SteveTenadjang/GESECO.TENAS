@@ -2,14 +2,8 @@
 using GESECO.BO;
 using GESECO.Winforms.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace GESECO.Winforms
@@ -24,11 +18,14 @@ namespace GESECO.Winforms
         {
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            //Ecole ee = new Ecole("IUC", "MyIUC@gmail.com", 653051037, "Logbessou", @"‪C:\Users\hp\OneDrive\Pictures\LogoTenas");
-            //EcoleBLO eeblo = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
-            //eeblo.CreateCEcole(ee);
             frm = new FrmMenu();
         }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         void MenuLoad()
         {
             frm.TopLevel = false;
@@ -42,7 +39,7 @@ namespace GESECO.Winforms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -143,6 +140,12 @@ namespace GESECO.Winforms
             frm.pnlMenuBackground.FillColor = Color.Teal;
             btnTheme.Text = "Dark Mode";
             btnTheme.CustomImages.Image = Resources.icons8_moon_symbol_60;
+        }
+
+        private void pnlHead_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

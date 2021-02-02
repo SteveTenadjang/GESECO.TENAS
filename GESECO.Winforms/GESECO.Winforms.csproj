@@ -109,23 +109,17 @@
     <Compile Include="GESECO.FORMS\FrmAddMember.Designer.cs">
       <DependentUpon>FrmAddMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="GESECO.FORMS\FrmAdminAuthentification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GESECO.FORMS\FrmAdminAuthentification.Designer.cs">
-      <DependentUpon>FrmAdminAuthentification.cs</DependentUpon>
-    </Compile>
     <Compile Include="GESECO.FORMS\FrmAdminDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GESECO.FORMS\FrmAdminDashBoard.Designer.cs">
       <DependentUpon>FrmAdminDashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GESECO.FORMS\FrmAutentificationEtudiant.cs">
+    <Compile Include="GESECO.FORMS\FrmAuthentfication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GESECO.FORMS\FrmAutentificationEtudiant.Designer.cs">
-      <DependentUpon>FrmAutentificationEtudiant.cs</DependentUpon>
+    <Compile Include="GESECO.FORMS\FrmAuthentfication.Designer.cs">
+      <DependentUpon>FrmAuthentfication.cs</DependentUpon>
     </Compile>
     <Compile Include="GESECO.FORMS\FrmCaissiere.cs">
       <SubType>Form</SubType>
@@ -183,14 +177,11 @@
     <EmbeddedResource Include="GESECO.FORMS\FrmAddMember.resx">
       <DependentUpon>FrmAddMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GESECO.FORMS\FrmAdminAuthentification.resx">
-      <DependentUpon>FrmAdminAuthentification.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GESECO.FORMS\FrmAdminDashBoard.resx">
       <DependentUpon>FrmAdminDashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GESECO.FORMS\FrmAutentificationEtudiant.resx">
-      <DependentUpon>FrmAutentificationEtudiant.cs</DependentUpon>
+    <EmbeddedResource Include="GESECO.FORMS\FrmAuthentfication.resx">
+      <DependentUpon>FrmAuthentfication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GESECO.FORMS\FrmCaissiere.resx">
       <DependentUpon>FrmCaissiere.cs</DependentUpon>
@@ -263,6 +254,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="GESCO.Prints\" />
     <Folder Include="GESECO.Reports\" />
   </ItemGroup>
   <ItemGroup>

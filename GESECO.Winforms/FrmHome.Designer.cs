@@ -265,6 +265,7 @@ namespace GESECO.Winforms
             this.pnlHead.Name = "pnlHead";
             this.pnlHead.Size = new System.Drawing.Size(1190, 32);
             this.pnlHead.TabIndex = 4;
+            this.pnlHead.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHead_MouseDown);
             // 
             // FrmHome
             // 
@@ -278,6 +279,7 @@ namespace GESECO.Winforms
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmHome";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.pnlMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);

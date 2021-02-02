@@ -35,10 +35,10 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvEtudiantInscrit = new System.Windows.Forms.DataGridView();
-            this.btnImprimer = new Guna.UI2.WinForms.Guna2Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimer = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEtudiantInscrit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,28 +149,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.dgvEtudiantInscrit.TabIndex = 92;
             this.dgvEtudiantInscrit.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEtudiantInscrit_CellDoubleClick);
             // 
-            // btnImprimer
-            // 
-            this.btnImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimer.BorderRadius = 20;
-            this.btnImprimer.CheckedState.Parent = this.btnImprimer;
-            this.btnImprimer.CustomImages.Parent = this.btnImprimer;
-            this.btnImprimer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnImprimer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnImprimer.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.btnImprimer.ForeColor = System.Drawing.Color.White;
-            this.btnImprimer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnImprimer.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimer.HoverState.Parent = this.btnImprimer;
-            this.btnImprimer.Location = new System.Drawing.Point(291, 432);
-            this.btnImprimer.Margin = new System.Windows.Forms.Padding(6);
-            this.btnImprimer.Name = "btnImprimer";
-            this.btnImprimer.ShadowDecoration.Parent = this.btnImprimer;
-            this.btnImprimer.Size = new System.Drawing.Size(349, 45);
-            this.btnImprimer.TabIndex = 93;
-            this.btnImprimer.Text = "Imprimer";
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Matricule";
@@ -194,6 +172,28 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
+            // btnImprimer
+            // 
+            this.btnImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimer.BorderRadius = 20;
+            this.btnImprimer.CheckedState.Parent = this.btnImprimer;
+            this.btnImprimer.CustomImages.Parent = this.btnImprimer;
+            this.btnImprimer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnImprimer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnImprimer.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.btnImprimer.ForeColor = System.Drawing.Color.White;
+            this.btnImprimer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnImprimer.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimer.HoverState.Parent = this.btnImprimer;
+            this.btnImprimer.Location = new System.Drawing.Point(291, 432);
+            this.btnImprimer.Margin = new System.Windows.Forms.Padding(6);
+            this.btnImprimer.Name = "btnImprimer";
+            this.btnImprimer.ShadowDecoration.Parent = this.btnImprimer;
+            this.btnImprimer.Size = new System.Drawing.Size(349, 45);
+            this.btnImprimer.TabIndex = 93;
+            this.btnImprimer.Text = "Imprimer";
+            // 
             // FrmCaissiere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -211,6 +211,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmCaissiere";
             this.Text = "FrmCaissiere";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvEtudiantInscrit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

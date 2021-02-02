@@ -15,6 +15,7 @@ namespace GESECO.Winforms.GESECO.FORMS
         public FrmCaissiere()
         {
             InitializeComponent();
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             dgvEtudiantInscrit.AutoGenerateColumns = false;
         }
 
