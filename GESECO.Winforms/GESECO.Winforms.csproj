@@ -169,11 +169,29 @@
     <Compile Include="GESECO.FORMS\FrmListEtudiant.Designer.cs">
       <DependentUpon>FrmListEtudiant.cs</DependentUpon>
     </Compile>
-    <Compile Include="GESECO.FORMS\FrmPayement.cs">
+    <Compile Include="GESECO.FORMS\FrmPaiement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GESECO.FORMS\FrmPayement.Designer.cs">
-      <DependentUpon>FrmPayement.cs</DependentUpon>
+    <Compile Include="GESECO.FORMS\FrmPaiement.Designer.cs">
+      <DependentUpon>FrmPaiement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GESECO.Reports\FrmCardPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GESECO.Reports\FrmCardPrint.Designer.cs">
+      <DependentUpon>FrmCardPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GESECO.Reports\FrmCertificatePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GESECO.Reports\FrmCertificatePrint.Designer.cs">
+      <DependentUpon>FrmCertificatePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GESECO.Reports\FrmRecuPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GESECO.Reports\FrmRecuPrint.Designer.cs">
+      <DependentUpon>FrmRecuPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +201,7 @@
     <EmbeddedResource Include="FrmSchool.resx">
       <DependentUpon>FrmSchool.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GESCO.Prints\CertificatePrint.rdlc" />
     <EmbeddedResource Include="GESECO.FORMS\FrmAddMember.resx">
       <DependentUpon>FrmAddMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,8 +232,12 @@
     <EmbeddedResource Include="GESECO.FORMS\FrmListEtudiant.resx">
       <DependentUpon>FrmListEtudiant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GESECO.FORMS\FrmPayement.resx">
-      <DependentUpon>FrmPayement.cs</DependentUpon>
+    <EmbeddedResource Include="GESECO.FORMS\FrmPaiement.resx">
+      <DependentUpon>FrmPaiement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GESCO.Prints\CardPrint.rdlc" />
+    <EmbeddedResource Include="GESECO.Reports\FrmCardPrint.resx">
+      <DependentUpon>FrmCardPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -253,24 +276,26 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GESECO.BLL\GESECO.BLL.csproj">
-      <Project>{f9c97b7b-19cd-481c-8167-6d7792a8dec2}</Project>
-      <Name>GESECO.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GESECO.BO\GESECO.BO.csproj">
-      <Project>{8fe844a4-2358-4488-acb2-4423c55821ec}</Project>
-      <Name>GESECO.BO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GESCO.Prints\" />
-    <Folder Include="GESECO.Reports\" />
+    <Folder Include="GESCO.PrintingClass\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sun-48.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-moon-symbol-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GESECO.FORMS\iconT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\_GESECO.BLL\_GESECO.BLL.csproj">
+      <Project>{921fa870-726d-4ce5-b1d1-ca4a48f2653c}</Project>
+      <Name>_GESECO.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_GESECO.BO\_GESECO.BO.csproj">
+      <Project>{82eae062-800c-4f10-ae6b-cd9ea67bcd2b}</Project>
+      <Name>_GESECO.BO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

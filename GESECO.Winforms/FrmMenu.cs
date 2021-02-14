@@ -39,7 +39,7 @@ namespace GESECO.Winforms
 
         private void btnPayement_Click(object sender, EventArgs e)
         {
-            FrmPayement frm = new FrmPayement();
+            FrmPaiement frm = new FrmPaiement();
             OpenChildForm(frm);
         }
 

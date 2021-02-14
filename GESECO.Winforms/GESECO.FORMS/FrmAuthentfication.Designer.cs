@@ -45,6 +45,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.cbRemembreMe = new System.Windows.Forms.CheckBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -134,6 +135,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.tbPassword.Size = new System.Drawing.Size(195, 30);
             this.tbPassword.TabIndex = 1;
             this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.DoubleClick += new System.EventHandler(this.tbPassword_DoubleClick);
             // 
             // linkLabel1
             // 
@@ -242,7 +244,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.cbShowPass.AutoSize = true;
             this.cbShowPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbShowPass.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.cbShowPass.Location = new System.Drawing.Point(239, 266);
+            this.cbShowPass.Location = new System.Drawing.Point(239, 255);
             this.cbShowPass.Margin = new System.Windows.Forms.Padding(0);
             this.cbShowPass.Name = "cbShowPass";
             this.cbShowPass.Size = new System.Drawing.Size(141, 24);
@@ -319,6 +321,20 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // cbRemembreMe
+            // 
+            this.cbRemembreMe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbRemembreMe.AutoSize = true;
+            this.cbRemembreMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRemembreMe.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.cbRemembreMe.Location = new System.Drawing.Point(247, 288);
+            this.cbRemembreMe.Margin = new System.Windows.Forms.Padding(0);
+            this.cbRemembreMe.Name = "cbRemembreMe";
+            this.cbRemembreMe.Size = new System.Drawing.Size(133, 24);
+            this.cbRemembreMe.TabIndex = 107;
+            this.cbRemembreMe.Text = "Remember Me";
+            this.cbRemembreMe.UseVisualStyleBackColor = true;
+            // 
             // FrmAuthentfication
             // 
             this.AcceptButton = this.btnSignIn;
@@ -327,6 +343,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(667, 449);
+            this.Controls.Add(this.cbRemembreMe);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -346,6 +363,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.Name = "FrmAuthentfication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAuthentfication";
+            this.Load += new System.EventHandler(this.FrmAuthentfication_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -372,5 +390,6 @@ namespace GESECO.Winforms.GESECO.FORMS
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private System.Windows.Forms.CheckBox cbRemembreMe;
     }
 }

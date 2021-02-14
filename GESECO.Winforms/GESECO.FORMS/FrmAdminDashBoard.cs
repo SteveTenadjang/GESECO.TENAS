@@ -106,7 +106,7 @@ namespace GESECO.Winforms.GESECO.FORMS
 
         private void btnPayement_Click_1(object sender, EventArgs e)
         {
-            FrmPayement frm = new FrmPayement();
+            FrmPaiement frm = new FrmPaiement();
             OpenChildForm(frm);
         }
 

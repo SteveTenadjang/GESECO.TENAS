@@ -62,6 +62,9 @@ namespace GESECO.Winforms
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.picClose = new Guna.UI2.WinForms.Guna2Button();
             this.cbFiliere = new System.Windows.Forms.ComboBox();
+            this.txtMDP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblMDP = new System.Windows.Forms.Label();
+            this.cbPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbInscription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -107,9 +110,9 @@ namespace GESECO.Winforms
             // 
             this.pbInscription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbInscription.Image = ((System.Drawing.Image)(resources.GetObject("pbInscription.Image")));
-            this.pbInscription.Location = new System.Drawing.Point(722, 205);
+            this.pbInscription.Location = new System.Drawing.Point(735, 216);
             this.pbInscription.Name = "pbInscription";
-            this.pbInscription.Size = new System.Drawing.Size(159, 150);
+            this.pbInscription.Size = new System.Drawing.Size(146, 136);
             this.pbInscription.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbInscription.TabIndex = 110;
             this.pbInscription.TabStop = false;
@@ -201,7 +204,7 @@ namespace GESECO.Winforms
             this.DatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DatePicker.HoverState.Parent = this.DatePicker;
-            this.DatePicker.Location = new System.Drawing.Point(82, 288);
+            this.DatePicker.Location = new System.Drawing.Point(115, 288);
             this.DatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DatePicker.Name = "DatePicker";
@@ -227,20 +230,20 @@ namespace GESECO.Winforms
             this.txtAdresse.ForeColor = System.Drawing.Color.Black;
             this.txtAdresse.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAdresse.HoverState.Parent = this.txtAdresse;
-            this.txtAdresse.Location = new System.Drawing.Point(399, 325);
+            this.txtAdresse.Location = new System.Drawing.Point(398, 331);
             this.txtAdresse.Margin = new System.Windows.Forms.Padding(6);
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.PasswordChar = '\0';
             this.txtAdresse.PlaceholderText = "";
             this.txtAdresse.SelectedText = "";
             this.txtAdresse.ShadowDecoration.Parent = this.txtAdresse;
-            this.txtAdresse.Size = new System.Drawing.Size(258, 27);
+            this.txtAdresse.Size = new System.Drawing.Size(146, 27);
             this.txtAdresse.TabIndex = 6;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(272, 331);
+            this.lblAddress.Location = new System.Drawing.Point(288, 334);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(101, 24);
             this.lblAddress.TabIndex = 104;
@@ -258,7 +261,7 @@ namespace GESECO.Winforms
             this.btnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnSave.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(18, 429);
+            this.btnSave.Location = new System.Drawing.Point(63, 429);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(326, 55);
@@ -279,7 +282,7 @@ namespace GESECO.Winforms
             this.btnCancel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCancel.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.HoverState.Parent = this.btnCancel;
-            this.btnCancel.Location = new System.Drawing.Point(555, 429);
+            this.btnCancel.Location = new System.Drawing.Point(477, 429);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(326, 55);
@@ -291,11 +294,11 @@ namespace GESECO.Winforms
             // 
             this.lblFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFiliere.AutoSize = true;
-            this.lblFiliere.Location = new System.Drawing.Point(473, 180);
+            this.lblFiliere.Location = new System.Drawing.Point(497, 183);
             this.lblFiliere.Name = "lblFiliere";
-            this.lblFiliere.Size = new System.Drawing.Size(72, 24);
+            this.lblFiliere.Size = new System.Drawing.Size(101, 24);
             this.lblFiliere.TabIndex = 101;
-            this.lblFiliere.Text = "Filiere :";
+            this.lblFiliere.Text = "Specialite :";
             // 
             // txtLieu
             // 
@@ -314,20 +317,20 @@ namespace GESECO.Winforms
             this.txtLieu.ForeColor = System.Drawing.Color.Black;
             this.txtLieu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLieu.HoverState.Parent = this.txtLieu;
-            this.txtLieu.Location = new System.Drawing.Point(327, 291);
+            this.txtLieu.Location = new System.Drawing.Point(327, 295);
             this.txtLieu.Margin = new System.Windows.Forms.Padding(6);
             this.txtLieu.Name = "txtLieu";
             this.txtLieu.PasswordChar = '\0';
             this.txtLieu.PlaceholderText = "";
             this.txtLieu.SelectedText = "";
             this.txtLieu.ShadowDecoration.Parent = this.txtLieu;
-            this.txtLieu.Size = new System.Drawing.Size(330, 27);
+            this.txtLieu.Size = new System.Drawing.Size(131, 27);
             this.txtLieu.TabIndex = 4;
             // 
             // lblBornAt
             // 
             this.lblBornAt.AutoSize = true;
-            this.lblBornAt.Location = new System.Drawing.Point(262, 293);
+            this.lblBornAt.Location = new System.Drawing.Point(289, 298);
             this.lblBornAt.Name = "lblBornAt";
             this.lblBornAt.Size = new System.Drawing.Size(30, 24);
             this.lblBornAt.TabIndex = 98;
@@ -336,7 +339,7 @@ namespace GESECO.Winforms
             // lblBornON
             // 
             this.lblBornON.AutoSize = true;
-            this.lblBornON.Location = new System.Drawing.Point(23, 293);
+            this.lblBornON.Location = new System.Drawing.Point(26, 298);
             this.lblBornON.Name = "lblBornON";
             this.lblBornON.Size = new System.Drawing.Size(68, 24);
             this.lblBornON.TabIndex = 97;
@@ -350,7 +353,7 @@ namespace GESECO.Winforms
             this.rbFemale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbFemale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbFemale.CheckedState.InnerOffset = -4;
-            this.rbFemale.Location = new System.Drawing.Point(247, 379);
+            this.rbFemale.Location = new System.Drawing.Point(222, 379);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(97, 28);
             this.rbFemale.TabIndex = 8;
@@ -368,7 +371,7 @@ namespace GESECO.Winforms
             this.rbMale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbMale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbMale.CheckedState.InnerOffset = -4;
-            this.rbMale.Location = new System.Drawing.Point(105, 379);
+            this.rbMale.Location = new System.Drawing.Point(103, 379);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(103, 28);
             this.rbMale.TabIndex = 7;
@@ -390,7 +393,7 @@ namespace GESECO.Winforms
             // lblContact
             // 
             this.lblContact.AutoSize = true;
-            this.lblContact.Location = new System.Drawing.Point(23, 331);
+            this.lblContact.Location = new System.Drawing.Point(23, 334);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(47, 24);
             this.lblContact.TabIndex = 93;
@@ -413,7 +416,7 @@ namespace GESECO.Winforms
             this.txtTel.ForeColor = System.Drawing.Color.Black;
             this.txtTel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTel.HoverState.Parent = this.txtTel;
-            this.txtTel.Location = new System.Drawing.Point(82, 331);
+            this.txtTel.Location = new System.Drawing.Point(115, 331);
             this.txtTel.Margin = new System.Windows.Forms.Padding(6);
             this.txtTel.Name = "txtTel";
             this.txtTel.PasswordChar = '\0';
@@ -427,7 +430,7 @@ namespace GESECO.Winforms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 252);
+            this.label2.Location = new System.Drawing.Point(23, 255);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 24);
             this.label2.TabIndex = 91;
@@ -450,7 +453,7 @@ namespace GESECO.Winforms
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(99, 252);
+            this.txtEmail.Location = new System.Drawing.Point(115, 252);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -463,7 +466,7 @@ namespace GESECO.Winforms
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(23, 216);
+            this.lblLastName.Location = new System.Drawing.Point(23, 219);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(87, 24);
             this.lblLastName.TabIndex = 89;
@@ -486,20 +489,20 @@ namespace GESECO.Winforms
             this.txtPrenom.ForeColor = System.Drawing.Color.Black;
             this.txtPrenom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrenom.HoverState.Parent = this.txtPrenom;
-            this.txtPrenom.Location = new System.Drawing.Point(133, 216);
+            this.txtPrenom.Location = new System.Drawing.Point(115, 216);
             this.txtPrenom.Margin = new System.Windows.Forms.Padding(6);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.PasswordChar = '\0';
             this.txtPrenom.PlaceholderText = "";
             this.txtPrenom.SelectedText = "";
             this.txtPrenom.ShadowDecoration.Parent = this.txtPrenom;
-            this.txtPrenom.Size = new System.Drawing.Size(309, 27);
+            this.txtPrenom.Size = new System.Drawing.Size(241, 27);
             this.txtPrenom.TabIndex = 1;
             // 
             // lblFName
             // 
             this.lblFName.AutoSize = true;
-            this.lblFName.Location = new System.Drawing.Point(23, 180);
+            this.lblFName.Location = new System.Drawing.Point(26, 183);
             this.lblFName.Name = "lblFName";
             this.lblFName.Size = new System.Drawing.Size(61, 24);
             this.lblFName.TabIndex = 87;
@@ -522,14 +525,14 @@ namespace GESECO.Winforms
             this.txtNom.ForeColor = System.Drawing.Color.Black;
             this.txtNom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNom.HoverState.Parent = this.txtNom;
-            this.txtNom.Location = new System.Drawing.Point(133, 180);
+            this.txtNom.Location = new System.Drawing.Point(115, 180);
             this.txtNom.Margin = new System.Windows.Forms.Padding(6);
             this.txtNom.Name = "txtNom";
             this.txtNom.PasswordChar = '\0';
             this.txtNom.PlaceholderText = "";
             this.txtNom.SelectedText = "";
             this.txtNom.ShadowDecoration.Parent = this.txtNom;
-            this.txtNom.Size = new System.Drawing.Size(309, 27);
+            this.txtNom.Size = new System.Drawing.Size(241, 27);
             this.txtNom.TabIndex = 0;
             // 
             // pictureBox1
@@ -575,7 +578,7 @@ namespace GESECO.Winforms
             this.picClose.ForeColor = System.Drawing.Color.White;
             this.picClose.HoverState.Parent = this.picClose;
             this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(837, 155);
+            this.picClose.Location = new System.Drawing.Point(837, 166);
             this.picClose.Name = "picClose";
             this.picClose.ShadowDecoration.Parent = this.picClose;
             this.picClose.Size = new System.Drawing.Size(44, 44);
@@ -586,14 +589,63 @@ namespace GESECO.Winforms
             // cbFiliere
             // 
             this.cbFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFiliere.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbFiliere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFiliere.FormattingEnabled = true;
-            this.cbFiliere.Location = new System.Drawing.Point(477, 207);
+            this.cbFiliere.Location = new System.Drawing.Point(501, 211);
             this.cbFiliere.Name = "cbFiliere";
             this.cbFiliere.Size = new System.Drawing.Size(207, 32);
             this.cbFiliere.Sorted = true;
             this.cbFiliere.TabIndex = 0;
             this.cbFiliere.TabStop = false;
+            // 
+            // txtMDP
+            // 
+            this.txtMDP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
+            this.txtMDP.BorderRadius = 15;
+            this.txtMDP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMDP.DefaultText = "";
+            this.txtMDP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMDP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMDP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMDP.DisabledState.Parent = this.txtMDP;
+            this.txtMDP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMDP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMDP.FocusedState.Parent = this.txtMDP;
+            this.txtMDP.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtMDP.ForeColor = System.Drawing.Color.Black;
+            this.txtMDP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMDP.HoverState.Parent = this.txtMDP;
+            this.txtMDP.Location = new System.Drawing.Point(435, 380);
+            this.txtMDP.Margin = new System.Windows.Forms.Padding(6);
+            this.txtMDP.Name = "txtMDP";
+            this.txtMDP.PasswordChar = '\0';
+            this.txtMDP.PlaceholderText = "";
+            this.txtMDP.SelectedText = "";
+            this.txtMDP.ShadowDecoration.Parent = this.txtMDP;
+            this.txtMDP.Size = new System.Drawing.Size(146, 27);
+            this.txtMDP.TabIndex = 111;
+            this.txtMDP.UseSystemPasswordChar = true;
+            // 
+            // lblMDP
+            // 
+            this.lblMDP.AutoSize = true;
+            this.lblMDP.Location = new System.Drawing.Point(325, 383);
+            this.lblMDP.Name = "lblMDP";
+            this.lblMDP.Size = new System.Drawing.Size(95, 24);
+            this.lblMDP.TabIndex = 112;
+            this.lblMDP.Text = "Mt passe :";
+            // 
+            // cbPass
+            // 
+            this.cbPass.AutoSize = true;
+            this.cbPass.Location = new System.Drawing.Point(590, 379);
+            this.cbPass.Name = "cbPass";
+            this.cbPass.Size = new System.Drawing.Size(164, 28);
+            this.cbPass.TabIndex = 113;
+            this.cbPass.Text = "Show Password";
+            this.cbPass.UseVisualStyleBackColor = true;
+            this.cbPass.CheckedChanged += new System.EventHandler(this.cbPass_CheckedChanged);
             // 
             // FrmInscription
             // 
@@ -601,6 +653,9 @@ namespace GESECO.Winforms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 502);
+            this.Controls.Add(this.cbPass);
+            this.Controls.Add(this.txtMDP);
+            this.Controls.Add(this.lblMDP);
             this.Controls.Add(this.cbFiliere);
             this.Controls.Add(this.picClose);
             this.Controls.Add(this.pbInscription);
@@ -675,5 +730,8 @@ namespace GESECO.Winforms
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2Button picClose;
         private System.Windows.Forms.ComboBox cbFiliere;
+        private Guna.UI2.WinForms.Guna2TextBox txtMDP;
+        private System.Windows.Forms.Label lblMDP;
+        private System.Windows.Forms.CheckBox cbPass;
     }
 }

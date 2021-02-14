@@ -35,10 +35,10 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvEtudiantInscrit = new System.Windows.Forms.DataGridView();
+            this.btnImprimer = new Guna.UI2.WinForms.Guna2Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnImprimer = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEtudiantInscrit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,29 +149,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.dgvEtudiantInscrit.TabIndex = 92;
             this.dgvEtudiantInscrit.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEtudiantInscrit_CellDoubleClick);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Matricule";
-            this.Column1.FillWeight = 88.44109F;
-            this.Column1.HeaderText = "MATRICULE";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Filiere";
-            this.Column4.FillWeight = 101.0807F;
-            this.Column4.HeaderText = "FILIERE";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "AmountPaid";
-            this.Column2.HeaderText = "MONTANT";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
             // btnImprimer
             // 
             this.btnImprimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -194,6 +171,29 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnImprimer.TabIndex = 93;
             this.btnImprimer.Text = "Imprimer";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Matricule";
+            this.Column1.FillWeight = 88.44109F;
+            this.Column1.HeaderText = "MATRICULE";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Filiere";
+            this.Column4.FillWeight = 101.0807F;
+            this.Column4.HeaderText = "FILIERE";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "AmountPaid";
+            this.Column2.HeaderText = "MONTANT (Xaf)";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // FrmCaissiere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -212,6 +212,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.Name = "FrmCaissiere";
             this.Text = "FrmCaissiere";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmCaissiere_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEtudiantInscrit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

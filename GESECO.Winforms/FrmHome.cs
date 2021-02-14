@@ -1,5 +1,5 @@
-﻿using GESECO.BLL;
-using GESECO.BO;
+﻿using _GESECO.BLL;
+using _GESECO.BO;
 using GESECO.Winforms.Properties;
 using System;
 using System.Drawing;

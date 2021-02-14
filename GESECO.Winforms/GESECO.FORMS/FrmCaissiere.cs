@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using _GESECO.BLL;
+using System;
+using System.Configuration;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GESECO.Winforms.GESECO.FORMS
 {
     public partial class FrmCaissiere : Form
     {
+        private PaiementBLO payementBLO;
         public FrmCaissiere()
         {
             InitializeComponent();
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             dgvEtudiantInscrit.AutoGenerateColumns = false;
+            payementBLO = new PaiementBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -45,6 +43,14 @@ namespace GESECO.Winforms.GESECO.FORMS
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FrmCaissiere_Load(object sender, EventArgs e)
+        {
+            dgvEtudiantInscrit.DataSource = null;
+            var list = payementBLO.GetAllPaiements().ToList();
+            dgvEtudiantInscrit.DataSource = list;
+
         }
     }
 }

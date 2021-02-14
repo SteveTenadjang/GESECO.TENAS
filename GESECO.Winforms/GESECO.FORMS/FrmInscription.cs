@@ -1,5 +1,5 @@
-﻿using GESECO.BLL;
-using GESECO.BO;
+﻿using _GESECO.BLL;
+using _GESECO.BO;
 using System;
 using System.Configuration;
 using System.Drawing;
@@ -40,14 +40,10 @@ namespace GESECO.Winforms
                 rbMale.Checked = true;
             else if (etudiant.Sexe == rbFemale.Text)
                 rbMale.Checked = true;
-            else
-            {
-                rbMale.Checked = false;
-                rbFemale.Checked = false;
-            }
-            DatePicker.Value = etudiant.DateNaissance;
-        }
 
+            DatePicker.Value = etudiant.DateNaissance;
+            cbFiliere.SelectedItem = etudiant.Specialite;
+        }
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -63,6 +59,7 @@ namespace GESECO.Winforms
             if (ofd.ShowDialog() == DialogResult.OK)
                 pbInscription.ImageLocation = ofd.FileName;
         }
+
         private void checkForm()
         {
             string text = string.Empty;
@@ -145,24 +142,24 @@ namespace GESECO.Winforms
                 string matricule = $"{cbFiliere.SelectedItem}{(blo.CountEtudiant() + 1).ToString().PadLeft(3,'0')}{sex.Substring(0, 1).ToUpper()}{DateTime.Now.Year.ToString().Substring(1,3)}";
 
                 Etudiant newEtudiant = new Etudiant(
+                        matricule,
                         txtNom.Text,
                         txtPrenom.Text,
+                        DateTime.Parse(DatePicker.Value.Date.ToShortDateString()),
                         long.Parse(txtTel.Text),
-                        txtAdresse.Text,
-                        txtEmail.Text,
-                        !string.IsNullOrEmpty(pbInscription.ImageLocation) ? File.ReadAllBytes(pbInscription.ImageLocation) : this.oldEtudiant?.Photo,
-                        DatePicker.Value.Date,
                         txtLieu.Text,
                         sex,
-                        cbFiliere.SelectedItem.ToString(),
-                        matricule
-                        //todo arrange filiere
+                        txtMDP.Text,
+                        txtEmail.Text,
+                        txtAdresse.Text,
+                        !string.IsNullOrEmpty(pbInscription.ImageLocation) ? File.ReadAllBytes(pbInscription.ImageLocation) : this.oldEtudiant?.Photo,
+                        cbFiliere.SelectedItem.ToString()
                     );
 
                 EtudiantBLO etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
 
                 if (this.oldEtudiant == null)
-                    etudiantBLO.CreateEtudiant(newEtudiant);
+                    etudiantBLO.AddEtudiant(newEtudiant);
                 else
                     etudiantBLO.EditEtudiant(oldEtudiant, newEtudiant);
 
@@ -189,7 +186,8 @@ namespace GESECO.Winforms
                 rbMale.Checked = false;
                 rbFemale.Checked = false;
                 DatePicker.Value = DateTime.Now;
-                MessageBox.Show($" votre matricule est : {newEtudiant.Matricule} ", "Inscription", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbFiliere.SelectedItem = null;
+                MessageBox.Show($" votre matricule est : {newEtudiant.ID} ", "Inscription", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (TypingException ex)
@@ -228,9 +226,16 @@ namespace GESECO.Winforms
         {
             img = pbInscription.Image;
 
+            cbFiliere.DataSource = specialiteBLO.GetAllSpecialites();
+            cbFiliere.DisplayMember = "Nom";
+        }
 
-            cbFiliere.DataSource = specialiteBLO.GetAllSpecialite();
-            cbFiliere.DisplayMember = "Intituler";
+        private void cbPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbPass.Checked == true)
+                txtMDP.UseSystemPasswordChar = false;
+            else
+                txtMDP.UseSystemPasswordChar = true;
         }
     }
 }
