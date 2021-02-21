@@ -8,13 +8,14 @@ namespace _GESECO.BO
 {
     public class Universite
     {
+        public string ID { get; set; }
         public string Nom { get; set; }
         public string Abreger { get; set; }
         public string Adresse { get; set; }
         public string Email { get; set; }
         public long Contact { get; set; }
         public byte[] Logo { get; set; }
-        public List<Ecole> ecoles = new List<Ecole>();
+        //public List<Ecole> ecoles = new List<Ecole>();
 
 
         public Universite()
@@ -22,8 +23,9 @@ namespace _GESECO.BO
 
         }
 
-        public Universite(string nom, string abreger,string email, string adresse, long contact,byte[] logo)
+        public Universite(string id,string nom, string abreger,string email, string adresse, long contact,byte[] logo)
         {
+            ID = id;
             Nom = nom;
             Abreger = abreger;
             Email = email;
@@ -32,42 +34,38 @@ namespace _GESECO.BO
             Logo = logo;
         }
 
-        public Universite(string nom, string abreger,string email, string adresse, long contact,byte[] logo, Ecole ecole) 
-            : this(nom, abreger,email, adresse, contact,logo)
-        {
-            ecoles.Add(ecole);
-        }
+        //public Universite(string nom, string abreger,string email, string adresse, long contact,byte[] logo, Ecole ecole) 
+        //    : this(nom, abreger,email, adresse, contact,logo)
+        //{
+        //    ecoles.Add(ecole);
+        //}
 
-        public Universite(Universite universite, Ecole ecole)
+        public Universite(Universite universite)
         {
+            ID = universite.ID;
             Nom = universite.Nom;
             Abreger = universite.Abreger;
             Contact = universite.Contact;
             Email = universite.Email;
             Adresse = universite.Adresse;
             Logo = universite.Logo;
-            ecoles.Add(ecole);
+            //ecoles.Add(ecole);
         }
 
         public override string ToString()
         {
-            Console.WriteLine($"{Abreger} - {Nom}");
-            ecoles.ForEach(e => Console.WriteLine(e.ToString()));
-            return "";
+            return $"{Abreger} - {Nom}";
         }
+
         public override bool Equals(object obj)
         {
             return obj is Universite universite &&
-                   Nom == universite.Nom &&
-                   Contact == universite.Contact;
+                   ID == universite.ID;
         }
 
         public override int GetHashCode()
         {
-            int hashCode = -2136868768;
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Nom);
-            hashCode = hashCode * -1521134295 + Contact.GetHashCode();
-            return hashCode;
+            return 1213502048 + EqualityComparer<string>.Default.GetHashCode(ID);
         }
     }
 }

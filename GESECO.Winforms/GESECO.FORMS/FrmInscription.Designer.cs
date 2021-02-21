@@ -61,7 +61,7 @@ namespace GESECO.Winforms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.picClose = new Guna.UI2.WinForms.Guna2Button();
-            this.cbFiliere = new System.Windows.Forms.ComboBox();
+            this.cbSpecialite = new System.Windows.Forms.ComboBox();
             this.txtMDP = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblMDP = new System.Windows.Forms.Label();
             this.cbPass = new System.Windows.Forms.CheckBox();
@@ -110,7 +110,7 @@ namespace GESECO.Winforms
             // 
             this.pbInscription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbInscription.Image = ((System.Drawing.Image)(resources.GetObject("pbInscription.Image")));
-            this.pbInscription.Location = new System.Drawing.Point(735, 216);
+            this.pbInscription.Location = new System.Drawing.Point(735, 192);
             this.pbInscription.Name = "pbInscription";
             this.pbInscription.Size = new System.Drawing.Size(146, 136);
             this.pbInscription.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -347,13 +347,14 @@ namespace GESECO.Winforms
             // 
             // rbFemale
             // 
+            this.rbFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbFemale.AutoSize = true;
             this.rbFemale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbFemale.CheckedState.BorderThickness = 0;
             this.rbFemale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbFemale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbFemale.CheckedState.InnerOffset = -4;
-            this.rbFemale.Location = new System.Drawing.Point(222, 379);
+            this.rbFemale.Location = new System.Drawing.Point(784, 361);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(97, 28);
             this.rbFemale.TabIndex = 8;
@@ -365,13 +366,14 @@ namespace GESECO.Winforms
             // 
             // rbMale
             // 
+            this.rbMale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbMale.AutoSize = true;
             this.rbMale.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbMale.CheckedState.BorderThickness = 0;
             this.rbMale.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.rbMale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rbMale.CheckedState.InnerOffset = -4;
-            this.rbMale.Location = new System.Drawing.Point(103, 379);
+            this.rbMale.Location = new System.Drawing.Point(667, 361);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(103, 28);
             this.rbMale.TabIndex = 7;
@@ -383,8 +385,9 @@ namespace GESECO.Winforms
             // 
             // lblSex
             // 
+            this.lblSex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(23, 383);
+            this.lblSex.Location = new System.Drawing.Point(663, 331);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(64, 24);
             this.lblSex.TabIndex = 94;
@@ -578,7 +581,7 @@ namespace GESECO.Winforms
             this.picClose.ForeColor = System.Drawing.Color.White;
             this.picClose.HoverState.Parent = this.picClose;
             this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(837, 166);
+            this.picClose.Location = new System.Drawing.Point(837, 142);
             this.picClose.Name = "picClose";
             this.picClose.ShadowDecoration.Parent = this.picClose;
             this.picClose.Size = new System.Drawing.Size(44, 44);
@@ -586,18 +589,17 @@ namespace GESECO.Winforms
             this.picClose.UseTransparentBackground = true;
             this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
-            // cbFiliere
+            // cbSpecialite
             // 
-            this.cbFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbFiliere.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbFiliere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFiliere.FormattingEnabled = true;
-            this.cbFiliere.Location = new System.Drawing.Point(501, 211);
-            this.cbFiliere.Name = "cbFiliere";
-            this.cbFiliere.Size = new System.Drawing.Size(207, 32);
-            this.cbFiliere.Sorted = true;
-            this.cbFiliere.TabIndex = 0;
-            this.cbFiliere.TabStop = false;
+            this.cbSpecialite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSpecialite.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbSpecialite.FormattingEnabled = true;
+            this.cbSpecialite.Location = new System.Drawing.Point(501, 211);
+            this.cbSpecialite.Name = "cbSpecialite";
+            this.cbSpecialite.Size = new System.Drawing.Size(207, 32);
+            this.cbSpecialite.Sorted = true;
+            this.cbSpecialite.TabIndex = 0;
+            this.cbSpecialite.TabStop = false;
             // 
             // txtMDP
             // 
@@ -616,7 +618,7 @@ namespace GESECO.Winforms
             this.txtMDP.ForeColor = System.Drawing.Color.Black;
             this.txtMDP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMDP.HoverState.Parent = this.txtMDP;
-            this.txtMDP.Location = new System.Drawing.Point(435, 380);
+            this.txtMDP.Location = new System.Drawing.Point(128, 379);
             this.txtMDP.Margin = new System.Windows.Forms.Padding(6);
             this.txtMDP.Name = "txtMDP";
             this.txtMDP.PasswordChar = '\0';
@@ -630,7 +632,7 @@ namespace GESECO.Winforms
             // lblMDP
             // 
             this.lblMDP.AutoSize = true;
-            this.lblMDP.Location = new System.Drawing.Point(325, 383);
+            this.lblMDP.Location = new System.Drawing.Point(23, 382);
             this.lblMDP.Name = "lblMDP";
             this.lblMDP.Size = new System.Drawing.Size(95, 24);
             this.lblMDP.TabIndex = 112;
@@ -639,7 +641,7 @@ namespace GESECO.Winforms
             // cbPass
             // 
             this.cbPass.AutoSize = true;
-            this.cbPass.Location = new System.Drawing.Point(590, 379);
+            this.cbPass.Location = new System.Drawing.Point(293, 378);
             this.cbPass.Name = "cbPass";
             this.cbPass.Size = new System.Drawing.Size(164, 28);
             this.cbPass.TabIndex = 113;
@@ -656,7 +658,7 @@ namespace GESECO.Winforms
             this.Controls.Add(this.cbPass);
             this.Controls.Add(this.txtMDP);
             this.Controls.Add(this.lblMDP);
-            this.Controls.Add(this.cbFiliere);
+            this.Controls.Add(this.cbSpecialite);
             this.Controls.Add(this.picClose);
             this.Controls.Add(this.pbInscription);
             this.Controls.Add(this.guna2Button4);
@@ -729,7 +731,7 @@ namespace GESECO.Winforms
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2Button picClose;
-        private System.Windows.Forms.ComboBox cbFiliere;
+        private System.Windows.Forms.ComboBox cbSpecialite;
         private Guna.UI2.WinForms.Guna2TextBox txtMDP;
         private System.Windows.Forms.Label lblMDP;
         private System.Windows.Forms.CheckBox cbPass;

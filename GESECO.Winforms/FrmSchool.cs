@@ -25,16 +25,18 @@ namespace GESECO.Winforms
         {
             SpecialiteBLO specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
 
-            Specialite specialite = new Specialite("Programmation et Application Mobile","PAM");
-            Specialite specialite1 = new Specialite("Reseau et Securite Informatique","RSI");
-            Specialite specialite2 = new Specialite("Genie Logiciel","GL");
-            Specialite specialite3 = new Specialite("Comptabilite","COMP");
-            Specialite specialite4 = new Specialite("Software Engeneering","SE");
-            Specialite specialite5 = new Specialite("Accounting","ACC");
-            Specialite specialite6 = new Specialite("Marketing","MK");
-            Specialite specialite7 = new Specialite("Logistique","LG");
-            Specialite specialite8 = new Specialite("Computer Engeneering","CE");
-            Specialite specialite9 = new Specialite("Mecanic Engeneering","ME");
+            Filiere filiere = new Filiere("TI01", "Tenchnologie de l'Information et de la Communication", "TIC", 900000, "Diplome : DEC Durrer 2Ans");
+
+            Specialite specialite = new Specialite("S001","Programmation et Application Mobile","PAM",filiere);
+            Specialite specialite1 = new Specialite("S002", "Reseau et Securite Informatique","RSI",filiere);
+            Specialite specialite2 = new Specialite("S003", "Genie Logiciel","GL");
+            Specialite specialite3 = new Specialite("S004", "Comptabilite","COMP");
+            Specialite specialite4 = new Specialite("S005", "Software Engeneering","SE");
+            Specialite specialite5 = new Specialite("S006", "Accounting","ACC");
+            Specialite specialite6 = new Specialite("S007", "Marketing","MK");
+            Specialite specialite7 = new Specialite("S008", "Logistique","LG");
+            Specialite specialite8 = new Specialite("S009", "Computer Engeneering","CE");
+            Specialite specialite9 = new Specialite("S010", "Mecanic Engeneering","ME");
 
             specialiteBLO.AddSpecialite(specialite);
             specialiteBLO.AddSpecialite(specialite1);

@@ -1,6 +1,7 @@
 ﻿using _GESECO.BLL;
 using _GESECO.BO;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.IO;
@@ -14,12 +15,13 @@ namespace GESECO.Winforms
         private Etudiant oldEtudiant = null;
         private Image img;
         private SpecialiteBLO specialiteBLO;
-
+        private FiliereBLO filiereBLO;
 
         public FrmInscription()
         {
             InitializeComponent();
             specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            filiereBLO = new FiliereBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
         public FrmInscription(Action callback) : this()
         {
@@ -41,8 +43,8 @@ namespace GESECO.Winforms
             else if (etudiant.Sexe == rbFemale.Text)
                 rbMale.Checked = true;
 
-            DatePicker.Value = etudiant.DateNaissance;
-            cbFiliere.SelectedItem = etudiant.Specialite;
+            DatePicker.Value = DateTime.Parse(etudiant.DateNaissance.ToString());
+            cbSpecialite.SelectedItem = etudiant.SpecialiteE;
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -71,7 +73,8 @@ namespace GESECO.Winforms
             txtAdresse.FillColor = Color.White;
             lblSex.BackColor = Color.Transparent;
             lblBornON.BackColor = Color.Transparent;
-            cbFiliere.BackColor = Color.White;
+            cbSpecialite.BackColor = Color.White;
+            txtMDP.BackColor = Color.Transparent;
 
 
 
@@ -99,6 +102,11 @@ namespace GESECO.Winforms
                 text += "- Place of birth can't be empty !\n";
                 txtLieu.FillColor = Color.LightPink;
             }
+            if (string.IsNullOrWhiteSpace(txtMDP.Text))
+            {
+                text += "- Password can't be empty !\n";
+                txtMDP.FillColor = Color.LightPink;
+            }
             if (string.IsNullOrWhiteSpace(txtAdresse.Text))
             {
                 text += "- Address can't be empty !\n";
@@ -114,10 +122,10 @@ namespace GESECO.Winforms
                 text += "- Please take a look at Date of birth!\n";
                 lblBornON.BackColor = Color.LightPink;
             }
-            if(cbFiliere.SelectedItem == null)
+            if (cbSpecialite.SelectedItem == null)
             {
                 text += "Please chose a course !\n";
-                cbFiliere.BackColor = Color.LightPink;
+                cbSpecialite.BackColor = Color.LightPink;
             }
             if (!string.IsNullOrEmpty(text))
                 throw new TypingException(text);
@@ -138,14 +146,18 @@ namespace GESECO.Winforms
             {
                 EtudiantBLO blo = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
                 checkForm();
-                string sex = (rbMale.Checked) ? rbMale.Text : (rbFemale.Checked) ? rbFemale.Text : null;
-                string matricule = $"{cbFiliere.SelectedItem}{(blo.CountEtudiant() + 1).ToString().PadLeft(3,'0')}{sex.Substring(0, 1).ToUpper()}{DateTime.Now.Year.ToString().Substring(1,3)}";
 
+                Specialite specialite = cbSpecialite.SelectedItem as Specialite;
+                string abreger = (specialite != null) ? specialite.Abreger : null;
+
+                string sex = (rbMale.Checked) ? rbMale.Text : (rbFemale.Checked) ? rbFemale.Text : null;
+                string matricule = $"{abreger}{(blo.CountEtudiant() + 1).ToString().PadLeft(3,'0')}{sex.Substring(0, 1).ToUpper()}{DateTime.Now.Year.ToString().Substring(1,3)}";
+                
                 Etudiant newEtudiant = new Etudiant(
                         matricule,
                         txtNom.Text,
                         txtPrenom.Text,
-                        DateTime.Parse(DatePicker.Value.Date.ToShortDateString()),
+                        DatePicker.Value.ToShortDateString(),
                         long.Parse(txtTel.Text),
                         txtLieu.Text,
                         sex,
@@ -153,7 +165,7 @@ namespace GESECO.Winforms
                         txtEmail.Text,
                         txtAdresse.Text,
                         !string.IsNullOrEmpty(pbInscription.ImageLocation) ? File.ReadAllBytes(pbInscription.ImageLocation) : this.oldEtudiant?.Photo,
-                        cbFiliere.SelectedItem.ToString()
+                        cbSpecialite.SelectedItem as Specialite
                     );
 
                 EtudiantBLO etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
@@ -186,7 +198,8 @@ namespace GESECO.Winforms
                 rbMale.Checked = false;
                 rbFemale.Checked = false;
                 DatePicker.Value = DateTime.Now;
-                cbFiliere.SelectedItem = null;
+                cbSpecialite.SelectedItem = null;
+                txtMDP.Clear();
                 MessageBox.Show($" votre matricule est : {newEtudiant.ID} ", "Inscription", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -225,9 +238,9 @@ namespace GESECO.Winforms
         private void FrmInscription_Load(object sender, EventArgs e)
         {
             img = pbInscription.Image;
-
-            cbFiliere.DataSource = specialiteBLO.GetAllSpecialites();
-            cbFiliere.DisplayMember = "Nom";
+            var specialite = specialiteBLO.GetAllSpecialites();
+            cbSpecialite.DataSource = specialite;
+            cbSpecialite.DisplayMember = "Nom";
         }
 
         private void cbPass_CheckedChanged(object sender, EventArgs e)
@@ -237,5 +250,6 @@ namespace GESECO.Winforms
             else
                 txtMDP.UseSystemPasswordChar = true;
         }
+
     }
 }

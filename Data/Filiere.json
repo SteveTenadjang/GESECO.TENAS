@@ -1,3 +1,1 @@
-
-
-[{"specialites":[],"ID":"TI01","Nom":"Tenchnologie de l'Information et de la Communication","Abreger":"TIC","Pension":900000.0,"Desciption":"Diplome : DEC Durrer 2Ans"},{"specialites":[],"ID":"BTS","Nom":"Bachelor","Abreger":"BTS","Pension":450000.0,"Desciption":"Diplome : BTS Durrer 2Ans"},{"specialites":[],"ID":"HND","Nom":"Higher National Degree ","Abreger":"HND","Pension":900000.0,"Desciption":"Diplome : HND Durrer 2Ans"}]
+[{"ID":"TI01","Nom":"Tenchnologie de l'Information et de la Communication","Abreger":"TIC","Pension":900000.0,"Desciption":"Diplome : DEC Durrer 2Ans","EcoleF":null},{"ID":"BTS","Nom":"Bachelor","Abreger":"BTS","Pension":450000.0,"Desciption":"Diplome : BTS Durrer 2Ans","EcoleF":null},{"ID":"HND","Nom":"Higher National Degree ","Abreger":"HND","Pension":900000.0,"Desciption":"Diplome : HND Durrer 2Ans","EcoleF":null}]

@@ -15,7 +15,7 @@ namespace _GESECO.BO
             DateEmbauche = DateTime.UtcNow.ToShortDateString();
         }
 
-        public Caissiere(string iD, string nom, string prenom, DateTime dateNaissance,
+        public Caissiere(string iD, string nom, string prenom, string dateNaissance,
                         long contact, string lieuNaissance, string sexe, string mDP, string email,
                         string adresse, byte[] photo)
             : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
@@ -46,7 +46,7 @@ namespace _GESECO.BO
 
         public override string ToString()
         {
-            return $"{Nom} {Prenom} {DateTime.Now.Year - DateNaissance.Year}Ans";
+            return $"{Nom} {Prenom} {DateTime.Now.Year - DateTime.Parse(DateNaissance).Year}Ans";
         }
 
     }

@@ -39,7 +39,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             else if (admin.Sexe == rbFemale.Text)
                 rbMale.Checked = true;
 
-            DatePicker.Value = admin.DateNaissance;
+            DatePicker.Value = DateTime.Parse(admin.DateNaissance.ToString());
             txtPoste.Text = admin.Poste;
             txtMDP.Text = admin.MDP;
         }
@@ -62,7 +62,7 @@ namespace GESECO.Winforms.GESECO.FORMS
                                 matricule,
                                 txtNom.Text,
                                 txtPrenom.Text,
-                                DateTime.Parse(DatePicker.Value.ToShortDateString()),
+                                DatePicker.Value.ToShortDateString(),
                                 long.Parse(txtTel.Text),
                                 txtLieu.Text,
                                 sex,

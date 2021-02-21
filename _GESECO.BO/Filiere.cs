@@ -11,7 +11,9 @@ namespace _GESECO.BO
         public string Abreger { get; set; }
         public double Pension { get; set; }
         public string Desciption { get; set; }
-        public List<Specialite> specialites = new List<Specialite>();
+        public Ecole EcoleF { get; set; }
+
+        //public List<Specialite> specialites = new List<Specialite>();
 
         public Filiere()
         {
@@ -27,20 +29,20 @@ namespace _GESECO.BO
             Pension = pension;
         }
 
-        public Filiere(string iD, string nom, string abreger,double pension, string desciption, Specialite specialite) 
+        public Filiere(string iD, string nom, string abreger,double pension, string desciption, Ecole e) 
             : this(iD, nom, abreger, pension,desciption)
         {
-            specialites.Add(specialite);
+            EcoleF = e;
         }
 
-        public Filiere(Filiere filier, Specialite specialite)
+        public Filiere(Filiere filier, Ecole e)
         {
             ID = filier.ID;
             Nom = filier.Nom;
             Abreger = filier.Abreger;
             Pension = filier.Pension;
             Desciption = filier.Desciption;
-            specialites.Add(specialite);
+            EcoleF = e;
         }
 
         public override bool Equals(object obj)
@@ -56,9 +58,7 @@ namespace _GESECO.BO
 
         public override string ToString()
         {
-            Console.WriteLine($"{Abreger} - {Nom}");
-            specialites.ForEach(e => Console.WriteLine(e.ToString()));
-            return "";
+            return $"{Abreger} - {Nom}";
         }
     }
 }

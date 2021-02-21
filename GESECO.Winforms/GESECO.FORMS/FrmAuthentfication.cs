@@ -14,6 +14,7 @@ namespace GESECO.Winforms.GESECO.FORMS
         private EtudiantBLO etudiantBLO;
         private AdminBLO adminBLO;
         private UserBLO userBLO;
+        private CaissiereBLO caissiereBLO;
 
         public FrmAuthentfication()
         {
@@ -21,6 +22,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
             userBLO = new UserBLO(ConfigurationManager.AppSettings["DbFolder"]);
             adminBLO = new AdminBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            caissiereBLO = new CaissiereBLO(ConfigurationManager.AppSettings["DbFolder"]);
             CreateAdmin();
         }
 
@@ -30,7 +32,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             Admin admin = new Admin(matricule,
                                     "Tenadjang",
                                     "Steve",
-                                    DateTime.Parse(DateTime.Now.ToLongTimeString()),
+                                    DateTime.Now.ToLongTimeString(),
                                     653051037,
                                     "Douala",
                                     "Male",
@@ -46,7 +48,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             Admin admin1 = new Admin(matricule,
                                     "Mbou",
                                     "Yassen",
-                                    DateTime.Parse(DateTime.Now.ToLongTimeString()),
+                                    DateTime.Now.ToLongTimeString(),
                                     684521525,
                                     "Youande",
                                     "Male",
@@ -62,7 +64,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             Admin admin2 = new Admin(matricule,
                                     "Ndanga",
                                     "Scintich",
-                                    DateTime.Parse(DateTime.Now.ToLongTimeString()),
+                                    DateTime.Now.ToLongTimeString(),
                                     652185548,
                                     "Youande",
                                     "Female",
@@ -78,7 +80,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             Admin admin3 = new Admin(matricule,
                                     "Fotso",
                                     "Leanne",
-                                    DateTime.Parse(DateTime.Now.ToLongTimeString()),
+                                    DateTime.Now.ToLongTimeString(),
                                     6995845224,
                                     "Douala",
                                     "Female",
@@ -94,7 +96,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             Admin admin4 = new Admin(matricule,
                                     "Nzeundi",
                                     "Carmel",
-                                    DateTime.Parse(DateTime.Now.ToLongTimeString()),
+                                    DateTime.Now.ToLongTimeString(),
                                     652147585,
                                     "Baffoussam",
                                     "Male",
@@ -110,7 +112,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             Admin admin5 = new Admin(matricule,
                                     "Chimi",
                                     "Ronald",
-                                    DateTime.Parse(DateTime.Now.ToLongTimeString()),
+                                    DateTime.Now.ToLongTimeString(),
                                     652147585,
                                     "Youande",
                                     "Male",
@@ -127,40 +129,46 @@ namespace GESECO.Winforms.GESECO.FORMS
         {
             try
             {
-                if (etudiantBLO.GetByID(tbIdentifiant.Text).Count() > 0 && tbIdentifiant.Text.Equals(tbPassword.Text))
+                if (etudiantBLO.GetByID(tbIdentifiant.Text).Count() > 0 
+                    && etudiantBLO.GetBy(x => x.MDP == tbPassword.Text).Count() > 0)
                 {
                     this.Hide();
                     FrmHome frm = new FrmHome();
                     frm.Show();
                 }
-
-                if (adminBLO.GetBy(x => x.MDP == tbPassword.Text).Count() > 0 && adminBLO.GetBy(x => x.ID == tbIdentifiant.Text).Count() > 0)
+                else 
+                if (adminBLO.GetBy(x => x.MDP == tbPassword.Text).Count() > 0 
+                    && adminBLO.GetByID(tbIdentifiant.Text).Count() > 0)
                 {
                     this.Hide();
                     FrmAdminDashBoard frm = new FrmAdminDashBoard();
                     frm.Show();
                 }
-
-                if (tbIdentifiant.Text == "cass" && tbPassword.Text == "cass")
+                else if (caissiereBLO.GetByID(tbIdentifiant.Text).Count() > 0
+                    && caissiereBLO.GetBy(x => x.MDP == tbPassword.Text).Count() > 0)
                 {
                     this.Hide();
                     FrmCaissiere frmcase = new FrmCaissiere();
                     frmcase.Show();
                 }
-
-                if (tbIdentifiant.Text == "admin" && tbPassword.Text == "admin")
+                else if (tbIdentifiant.Text == "cass" 
+                    && tbIdentifiant.Text == tbPassword.Text)
                 {
                     this.Hide();
-                    FrmAdminDashBoard frm = new FrmAdminDashBoard();
-                    frm.Show();
+                    FrmCaissiere frmcase = new FrmCaissiere();
+                    frmcase.Show();
                 }
-
+                else
+                {
+                    throw new KeyNotFoundException("L'identifiant ou le not de passe n'ai pas correct");
+                }
+                
                 if (cbRemembreMe.Checked == true)
                 {
                     User user = new User(tbIdentifiant.Text, tbPassword.Text);
                     userBLO.SaveUser(user);
                 }
-                //ToDo fully correct authentification form 
+
             }
             catch (KeyNotFoundException ex)
             {

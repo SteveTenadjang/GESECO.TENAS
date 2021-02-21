@@ -8,7 +8,7 @@ namespace _GESECO.BO
         public string ID { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public DateTime DateNaissance { get; set; }
+        public string DateNaissance { get; set; }
         public long Contact { get; set; }
         public string LieuNaissance { get; set; }
         public string Sexe { get; set; }
@@ -22,7 +22,7 @@ namespace _GESECO.BO
 
         }
 
-        protected Personne(string iD, string nom, string prenom, DateTime dateNaissance, 
+        protected Personne(string iD, string nom, string prenom, string dateNaissance, 
             long contact, string lieuNaissance, string sexe, string mDP, string email,
             string adresse,byte[] photo)
         {
@@ -68,7 +68,7 @@ namespace _GESECO.BO
 
         public override string ToString()
         {
-            return $"{Nom} {Prenom} {DateTime.Now.Year - DateNaissance.Year}Ans";
+            return $"{Nom} {Prenom} {DateTime.Now.Year - DateTime.Parse(DateNaissance).Year}Ans";
         }
     }
 }

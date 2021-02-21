@@ -14,11 +14,13 @@ namespace GESECO.Winforms.GESECO.FORMS
     {
         private EtudiantBLO etudiantBLO;
         private FiliereBLO filiereBLO;
+        private SpecialiteBLO specialiteBLO;
         public FrmPaiement()
         {
             InitializeComponent();
             etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
             filiereBLO = new FiliereBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
 
         private void FrmPayement_Load(object sender, EventArgs e)
@@ -32,7 +34,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             {
                 if (double.Parse(txtAmount.Text) < 5000 || string.IsNullOrEmpty(txtAmount.Text))
                     throw new Exception("Viellez entrez un montant > 5000");
-
                 Paiement payement = new Paiement(txtMatricule.Text, double.Parse(txtAmount.Text));
                 PaiementBLO payementBLO = new PaiementBLO(ConfigurationManager.AppSettings["DbFolder"]);
                 payementBLO.SavePaiement(payement);
@@ -72,15 +73,18 @@ namespace GESECO.Winforms.GESECO.FORMS
             {
                 if (etudiantBLO.GetByID(txtMatricule.Text).Count() != 0)
                 {
-                    //Func<FiliereBLO, double> predicate;
-
-                    Filiere f = new Filiere();
                     List<Etudiant> etudiants = etudiantBLO.GetByID(txtMatricule.Text).ToList();
-                    txtFiliere.Text = etudiants[0].Specialite[0].ToString().ToUpper();
+
+                    List<Specialite> specialites = specialiteBLO.GetBy(x => x.Nom.Equals(etudiants[0].SpecialiteE.Nom)).ToList();
+                    txtFiliere.Text = specialites[0].Abreger;
+
                     txtNom.Text = etudiants[0].Nom.ToUpper();
                     txtPrenom.Text = etudiants[0].Prenom.ToUpper();
                     picBoxPhoto.Image = etudiants[0].Photo != null ? Image.FromStream(new MemoryStream(etudiants[0].Photo)) : null;
-                    txtUnPaid.Text =$"900000 xaf";
+
+                    List<Filiere> filiereE = filiereBLO.GetBy(x => x.Nom.Equals(specialites[0].Nom)).ToList();
+
+                    txtUnPaid.Text = $"{filiereE[0].Pension}Xaf";
                 }
 
             }

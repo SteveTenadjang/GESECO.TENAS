@@ -90,7 +90,7 @@ namespace _GESECO.DAL
             using (StreamWriter sw = new StreamWriter(file.FullName, false))
             {
                 string json = JsonConvert.SerializeObject(datas);
-                sw.WriteLine($"\n\n{json}");
+                sw.WriteLine(json);
             }
         }
         public void SaveUser()
@@ -98,7 +98,7 @@ namespace _GESECO.DAL
             using (StreamWriter sw = new StreamWriter(file.FullName, false))
             {
                 string json = JsonConvert.SerializeObject(datas);
-                sw.WriteLine("\n\n" + json);
+                sw.WriteLine(json);
             }
         }
         public void Save2()
@@ -106,7 +106,7 @@ namespace _GESECO.DAL
             using (StreamWriter sw = new StreamWriter($"{file.FullName} history", false))
             {
                 string json = JsonConvert.SerializeObject(datas);
-                sw.WriteLine("\n\n" + json);
+                sw.WriteLine(json);
             }
         }
         public void RemoveSave(T data)

@@ -7,7 +7,8 @@ namespace _GESECO.BO
         public string ID { get; set; }
         public string Nom { get; set; }
         public int NbPlace { get; set; }
-        public List<Etudiant> etudiants = new List<Etudiant>();
+        public Specialite SpecialiteC { get; set; }
+        //public List<Etudiant> etudiants = new List<Etudiant>();
 
         public Classe()
         {
@@ -21,19 +22,23 @@ namespace _GESECO.BO
             NbPlace = nbPlace;
         }
 
-        public Classe(string id,string nom, int nbPlace, Etudiant e)
+        public Classe(string id,string nom, int nbPlace, Specialite specialite)
+            :this(id,nom,nbPlace)
         {
-            ID = id;
-            Nom = nom;
-            NbPlace = nbPlace;
-            etudiants.Add(e);
+            SpecialiteC = specialite;
         }
-        public Classe(Classe c, Etudiant e)
+        public Classe(Classe c, Specialite s)
         {
             ID = c.ID;
             Nom = c.Nom;
             NbPlace = c.NbPlace;
-            etudiants.Add(e);
+            SpecialiteC = s;
+        }
+        public Classe(Classe c)
+        {
+            ID = c.ID;
+            Nom = c.Nom;
+            NbPlace = c.NbPlace;
         }
 
         public override string ToString()

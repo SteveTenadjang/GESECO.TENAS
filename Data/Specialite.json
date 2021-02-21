@@ -1,3 +1,76 @@
-
-
-[{"classes":[],"matieres":[],"Nom":"Programmation et Application Mobile","Abreger":"PAM"},{"classes":[],"matieres":[],"Nom":"Reseau et Securite Informatique","Abreger":"RSI"},{"classes":[],"matieres":[],"Nom":"Genie Logiciel","Abreger":"GL"},{"classes":[],"matieres":[],"Nom":"Comptabilite","Abreger":"COMP"},{"classes":[],"matieres":[],"Nom":"Software Engeneering","Abreger":"SE"},{"classes":[],"matieres":[],"Nom":"Accounting","Abreger":"ACC"},{"classes":[],"matieres":[],"Nom":"Marketing","Abreger":"MK"},{"classes":[],"matieres":[],"Nom":"Logistique","Abreger":"LG"},{"classes":[],"matieres":[],"Nom":"Computer Engeneering","Abreger":"CE"},{"classes":[],"matieres":[],"Nom":"Mecanic Engeneering","Abreger":"ME"}]
+[
+    {
+        "ID": "S001",
+        "Nom": "Programmation et Application Mobile",
+        "Abreger": "PAM",
+        "FiliereS": {
+            "ID": "TI01",
+            "Nom": "Tenchnologie de l'Information et de la Communication",
+            "Abreger": "TIC",
+            "Pension": 900000.0,
+            "Desciption": "Diplome : DEC Durrer 2Ans",
+            "EcoleF": null
+        }
+    },
+    {
+        "ID": "S002",
+        "Nom": "Reseau et Securite Informatique",
+        "Abreger": "RSI",
+        "FiliereS": {
+            "ID": "TI01",
+            "Nom": "Tenchnologie de l'Information et de la Communication",
+            "Abreger": "TIC",
+            "Pension": 900000.0,
+            "Desciption": "Diplome : DEC Durrer 2Ans",
+            "EcoleF": null
+        }
+    },
+    {
+        "ID": "S003",
+        "Nom": "Genie Logiciel",
+        "Abreger": "GL",
+        "FiliereS": null
+    },
+    {
+        "ID": "S004",
+        "Nom": "Comptabilite",
+        "Abreger": "COMP",
+        "FiliereS": null
+    },
+    {
+        "ID": "S005",
+        "Nom": "Software Engeneering",
+        "Abreger": "SE",
+        "FiliereS": null
+    },
+    {
+        "ID": "S006",
+        "Nom": "Accounting",
+        "Abreger": "ACC",
+        "FiliereS": null
+    },
+    {
+        "ID": "S007",
+        "Nom": "Marketing",
+        "Abreger": "MK",
+        "FiliereS": null
+    },
+    {
+        "ID": "S008",
+        "Nom": "Logistique",
+        "Abreger": "LG",
+        "FiliereS": null
+    },
+    {
+        "ID": "S009",
+        "Nom": "Computer Engeneering",
+        "Abreger": "CE",
+        "FiliereS": null
+    },
+    {
+        "ID": "S010",
+        "Nom": "Mecanic Engeneering",
+        "Abreger": "ME",
+        "FiliereS": null
+    }
+]

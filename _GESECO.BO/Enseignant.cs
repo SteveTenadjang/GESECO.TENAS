@@ -5,7 +5,8 @@ namespace _GESECO.BO
 {
     public class Enseignant : Personne
     {
-        public List<Matiere> matieres = new List<Matiere>();
+        public Matiere MatiereE { get; set; }
+        //public List<Matiere> matieres = new List<Matiere>();
 
         public Enseignant() 
             : base()
@@ -13,26 +14,26 @@ namespace _GESECO.BO
 
         }
 
-        public Enseignant(string iD, string nom, string prenom, DateTime dateNaissance,
+        public Enseignant(string iD, string nom, string prenom, string dateNaissance,
             long contact, string lieuNaissance, string sexe, string mDP, string email,
             string adresse, byte[] photo)
             : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
         {
 
         }
-        public Enseignant(string iD, string nom, string prenom, DateTime dateNaissance,
+        public Enseignant(string iD, string nom, string prenom, string dateNaissance,
             long contact, string lieuNaissance, string sexe, string mDP, string email,
             string adresse, byte[] photo,Matiere matiere)
             : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
         {
-            matieres.Add(matiere);
+            MatiereE = matiere;
         }
 
         public Enseignant(Enseignant e,Matiere m)
             : base(e.ID,e.Nom,e.Prenom,e.DateNaissance,e.Contact,e.LieuNaissance,e.Sexe,e.MDP,
                   e.Email,e.Adresse,e.Photo)
         {
-            matieres.Add(m);
+            MatiereE = m;
         }
 
         public override bool Equals(object obj)
@@ -48,7 +49,7 @@ namespace _GESECO.BO
 
         public override string ToString()
         {
-            return $"{Nom} {Prenom}";
+            return $"{Nom} {Prenom} {DateTime.Now.Year - DateTime.Parse(DateNaissance).Year}Ans";
         }
     }
 }
