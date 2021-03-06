@@ -29,6 +29,13 @@ namespace _GESECO.BO
             Pension = pension;
         }
 
+        public void PayFees(double amount)
+        {
+            if (amount <= Pension || amount >= 5000)
+                Pension -= amount;
+            else
+                throw new Exception("Montant non valide!");
+        }
         public Filiere(string iD, string nom, string abreger,double pension, string desciption, Ecole e) 
             : this(iD, nom, abreger, pension,desciption)
         {

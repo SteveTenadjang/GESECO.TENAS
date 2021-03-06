@@ -29,48 +29,104 @@
         "ID": "S003",
         "Nom": "Genie Logiciel",
         "Abreger": "GL",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "BTS",
+            "Nom": "Bachelor",
+            "Abreger": "BTS",
+            "Pension": 450000.0,
+            "Desciption": "Diplome : BTS Durrer 2Ans",
+            "EcoleF": null
+        }
     },
     {
         "ID": "S004",
         "Nom": "Comptabilite",
         "Abreger": "COMP",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "BTS",
+            "Nom": "Bachelor",
+            "Abreger": "BTS",
+            "Pension": 450000.0,
+            "Desciption": "Diplome : BTS Durrer 2Ans",
+            "EcoleF": null
+        }
     },
     {
         "ID": "S005",
         "Nom": "Software Engeneering",
         "Abreger": "SE",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "HND",
+            "Nom": "Higher National Degree ",
+            "Abreger": "HND",
+            "Pension": 900000.0,
+            "Desciption": "Diplome : HND Durrer 2Ans",
+            "EcoleF": null
+        }
     },
     {
         "ID": "S006",
         "Nom": "Accounting",
         "Abreger": "ACC",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "HND",
+            "Nom": "Higher National Degree ",
+            "Abreger": "HND",
+            "Pension": 900000.0,
+            "Desciption": "Diplome : HND Durrer 2Ans",
+            "EcoleF": null
+        }
     },
     {
         "ID": "S007",
         "Nom": "Marketing",
         "Abreger": "MK",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "BTS",
+            "Nom": "Bachelor",
+            "Abreger": "BTS",
+            "Pension": 450000.0,
+            "Desciption": "Diplome : BTS Durrer 2Ans",
+            "EcoleF": null
+        }
     },
     {
         "ID": "S008",
         "Nom": "Logistique",
         "Abreger": "LG",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "BTS",
+            "Nom": "Bachelor",
+            "Abreger": "BTS",
+            "Pension": 450000.0,
+            "Desciption": "Diplome : BTS Durrer 2Ans",
+            "EcoleF": null
+        }
     },
     {
         "ID": "S009",
         "Nom": "Computer Engeneering",
         "Abreger": "CE",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "HND",
+            "Nom": "Higher National Degree ",
+            "Abreger": "HND",
+            "Pension": 900000.0,
+            "Desciption": "Diplome : HND Durrer 2Ans",
+            "EcoleF": null
+        }
     },
     {
         "ID": "S010",
         "Nom": "Mecanic Engeneering",
         "Abreger": "ME",
-        "FiliereS": null
+        "FiliereS": {
+            "ID": "HND",
+            "Nom": "Higher National Degree ",
+            "Abreger": "HND",
+            "Pension": 900000.0,
+            "Desciption": "Diplome : HND Durrer 2Ans",
+            "EcoleF": null
+        }
     }
 ]

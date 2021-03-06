@@ -16,5 +16,11 @@ namespace GESECO.Winforms.GESECO.Reports
         {
             InitializeComponent();
         }
+
+        private void FrmRecuPrint_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

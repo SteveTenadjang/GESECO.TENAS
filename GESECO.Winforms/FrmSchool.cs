@@ -23,20 +23,27 @@ namespace GESECO.Winforms
 
         private void CreateSpecialite()
         {
+            FiliereBLO filiereBLO = new FiliereBLO(ConfigurationManager.AppSettings["DbFolder"]);
             SpecialiteBLO specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
 
             Filiere filiere = new Filiere("TI01", "Tenchnologie de l'Information et de la Communication", "TIC", 900000, "Diplome : DEC Durrer 2Ans");
+            Filiere filiere1 = new Filiere("BTS", "Bachelor", "BTS", 450000, "Diplome : BTS Durrer 2Ans");
+            Filiere filiere2 = new Filiere("HND", "Higher National Degree ", "HND", 900000, "Diplome : HND Durrer 2Ans");
+
+            filiereBLO.AddFiliere(filiere);
+            filiereBLO.AddFiliere(filiere1);
+            filiereBLO.AddFiliere(filiere2);
 
             Specialite specialite = new Specialite("S001","Programmation et Application Mobile","PAM",filiere);
             Specialite specialite1 = new Specialite("S002", "Reseau et Securite Informatique","RSI",filiere);
-            Specialite specialite2 = new Specialite("S003", "Genie Logiciel","GL");
-            Specialite specialite3 = new Specialite("S004", "Comptabilite","COMP");
-            Specialite specialite4 = new Specialite("S005", "Software Engeneering","SE");
-            Specialite specialite5 = new Specialite("S006", "Accounting","ACC");
-            Specialite specialite6 = new Specialite("S007", "Marketing","MK");
-            Specialite specialite7 = new Specialite("S008", "Logistique","LG");
-            Specialite specialite8 = new Specialite("S009", "Computer Engeneering","CE");
-            Specialite specialite9 = new Specialite("S010", "Mecanic Engeneering","ME");
+            Specialite specialite2 = new Specialite("S003", "Genie Logiciel","GL",filiere1);
+            Specialite specialite3 = new Specialite("S004", "Comptabilite","COMP",filiere1);
+            Specialite specialite4 = new Specialite("S005", "Software Engeneering","SE",filiere2);
+            Specialite specialite5 = new Specialite("S006", "Accounting","ACC",filiere2);
+            Specialite specialite6 = new Specialite("S007", "Marketing","MK", filiere1);
+            Specialite specialite7 = new Specialite("S008", "Logistique","LG", filiere1);
+            Specialite specialite8 = new Specialite("S009", "Computer Engeneering","CE", filiere2);
+            Specialite specialite9 = new Specialite("S010", "Mecanic Engeneering","ME", filiere2);
 
             specialiteBLO.AddSpecialite(specialite);
             specialiteBLO.AddSpecialite(specialite1);
@@ -53,15 +60,6 @@ namespace GESECO.Winforms
 
         private void CreateFiliers()
         {
-            FiliereBLO filiereBLO = new FiliereBLO(ConfigurationManager.AppSettings["DbFolder"]);
-
-            Filiere filiere = new Filiere("TI01", "Tenchnologie de l'Information et de la Communication", "TIC", 900000, "Diplome : DEC Durrer 2Ans");
-            Filiere filiere1 = new Filiere("BTS", "Bachelor", "BTS", 450000, "Diplome : BTS Durrer 2Ans");
-            Filiere filiere2 = new Filiere("HND", "Higher National Degree ", "HND", 900000, "Diplome : HND Durrer 2Ans");
-            
-            filiereBLO.AddFiliere(filiere);
-            filiereBLO.AddFiliere(filiere1);
-            filiereBLO.AddFiliere(filiere2);
         }
 
         private void FrmSchool_Load(object sender, EventArgs e)

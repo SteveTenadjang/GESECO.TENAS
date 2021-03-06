@@ -32,15 +32,26 @@ namespace GESECO.Winforms.GESECO.FORMS
         {
             try
             {
-                if (double.Parse(txtAmount.Text) < 5000 || string.IsNullOrEmpty(txtAmount.Text))
-                    throw new Exception("Viellez entrez un montant > 5000");
+                List<Etudiant> etudiants = etudiantBLO.GetByID(txtMatricule.Text).ToList();
+
+                if (double.Parse(txtAmount.Text) < 5000 || string.IsNullOrEmpty(txtAmount.Text)
+                    || double.Parse(txtAmount.Text) > etudiants[0].SpecialiteE.FiliereS.Pension)
+                {
+                    if(etudiants[0].SpecialiteE.FiliereS.Pension == 0)
+                    {
+                        throw new Exception("Scolarite deja regler");                        
+                    }
+                    else
+                        throw new Exception("Montant non valide");
+
+                }
                 Paiement payement = new Paiement(txtMatricule.Text, double.Parse(txtAmount.Text));
                 PaiementBLO payementBLO = new PaiementBLO(ConfigurationManager.AppSettings["DbFolder"]);
                 payementBLO.SavePaiement(payement);
 
                 MessageBox.Show("Paiement Enregistrez!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMatricule.Text = txtFiliere.Text = txtAmount.Text = txtNom.Text = txtPrenom.Text = txtUnPaid.Text = string.Empty;
-                picBoxPhoto.ImageLocation = null;
+                picBoxPhoto.Image = null;
 
             }
             catch (Exception ex)
@@ -82,9 +93,19 @@ namespace GESECO.Winforms.GESECO.FORMS
                     txtPrenom.Text = etudiants[0].Prenom.ToUpper();
                     picBoxPhoto.Image = etudiants[0].Photo != null ? Image.FromStream(new MemoryStream(etudiants[0].Photo)) : null;
 
-                    List<Filiere> filiereE = filiereBLO.GetBy(x => x.Nom.Equals(specialites[0].Nom)).ToList();
+                    PaiementBLO paiementBLO = new PaiementBLO(ConfigurationManager.AppSettings["DbFolder"]);
+                    var fees = paiementBLO.GetBy(x => x.Matricule == txtMatricule.Text).ToList();
 
-                    txtUnPaid.Text = $"{filiereE[0].Pension}Xaf";
+                    double sommeFees = 0;
+
+                    foreach(var f in fees)
+                    {
+                        sommeFees += f.AmountPaid;
+                    }
+
+                    etudiants[0].SpecialiteE.FiliereS.PayFees(sommeFees);
+
+                    txtUnPaid.Text = $"{etudiants[0].SpecialiteE.FiliereS.Pension}Xaf";
                 }
 
             }
