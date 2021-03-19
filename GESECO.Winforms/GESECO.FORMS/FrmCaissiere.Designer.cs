@@ -30,6 +30,9 @@ namespace GESECO.Winforms.GESECO.FORMS
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.lblSearch = new System.Windows.Forms.Label();
@@ -37,7 +40,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.dgvEtudiantInscrit = new System.Windows.Forms.DataGridView();
             this.btnImprimer = new Guna.UI2.WinForms.Guna2Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEtudiantInscrit)).BeginInit();
             this.SuspendLayout();
@@ -132,10 +134,17 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.dgvEtudiantInscrit.BackgroundColor = System.Drawing.Color.White;
             this.dgvEtudiantInscrit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEtudiantInscrit.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEtudiantInscrit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEtudiantInscrit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEtudiantInscrit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column4,
             this.Column2});
             this.dgvEtudiantInscrit.Location = new System.Drawing.Point(43, 109);
             this.dgvEtudiantInscrit.Margin = new System.Windows.Forms.Padding(11);
@@ -170,27 +179,26 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnImprimer.Size = new System.Drawing.Size(349, 45);
             this.btnImprimer.TabIndex = 93;
             this.btnImprimer.Text = "Imprimer";
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Matricule";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.FillWeight = 88.44109F;
             this.Column1.HeaderText = "MATRICULE";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Filiere";
-            this.Column4.FillWeight = 101.0807F;
-            this.Column4.HeaderText = "FILIERE";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
             // Column2
             // 
             this.Column2.DataPropertyName = "AmountPaid";
-            this.Column2.HeaderText = "MONTANT (Xaf)";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.Format = "000,000FCFA";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column2.HeaderText = "MONTANT";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
@@ -228,7 +236,6 @@ namespace GESECO.Winforms.GESECO.FORMS
         private System.Windows.Forms.DataGridView dgvEtudiantInscrit;
         private Guna.UI2.WinForms.Guna2Button btnImprimer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

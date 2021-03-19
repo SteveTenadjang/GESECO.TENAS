@@ -65,6 +65,8 @@ namespace GESECO.Winforms
             this.txtMDP = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblMDP = new System.Windows.Forms.Label();
             this.cbPass = new System.Windows.Forms.CheckBox();
+            this.cbFiliere = new System.Windows.Forms.ComboBox();
+            this.lbFiliere = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbInscription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -292,9 +294,8 @@ namespace GESECO.Winforms
             // 
             // lblFiliere
             // 
-            this.lblFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFiliere.AutoSize = true;
-            this.lblFiliere.Location = new System.Drawing.Point(497, 183);
+            this.lblFiliere.Location = new System.Drawing.Point(491, 252);
             this.lblFiliere.Name = "lblFiliere";
             this.lblFiliere.Size = new System.Drawing.Size(101, 24);
             this.lblFiliere.TabIndex = 101;
@@ -591,10 +592,11 @@ namespace GESECO.Winforms
             // 
             // cbSpecialite
             // 
-            this.cbSpecialite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSpecialite.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbSpecialite.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbSpecialite.FormattingEnabled = true;
-            this.cbSpecialite.Location = new System.Drawing.Point(501, 211);
+            this.cbSpecialite.Location = new System.Drawing.Point(495, 280);
             this.cbSpecialite.Name = "cbSpecialite";
             this.cbSpecialite.Size = new System.Drawing.Size(207, 32);
             this.cbSpecialite.Sorted = true;
@@ -649,12 +651,37 @@ namespace GESECO.Winforms
             this.cbPass.UseVisualStyleBackColor = true;
             this.cbPass.CheckedChanged += new System.EventHandler(this.cbPass_CheckedChanged);
             // 
+            // cbFiliere
+            // 
+            this.cbFiliere.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFiliere.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbFiliere.FormattingEnabled = true;
+            this.cbFiliere.Location = new System.Drawing.Point(495, 208);
+            this.cbFiliere.Name = "cbFiliere";
+            this.cbFiliere.Size = new System.Drawing.Size(207, 32);
+            this.cbFiliere.Sorted = true;
+            this.cbFiliere.TabIndex = 114;
+            this.cbFiliere.TabStop = false;
+            this.cbFiliere.SelectionChangeCommitted += new System.EventHandler(this.cbFiliere_SelectionChangeCommitted);
+            // 
+            // lbFiliere
+            // 
+            this.lbFiliere.AutoSize = true;
+            this.lbFiliere.Location = new System.Drawing.Point(491, 180);
+            this.lbFiliere.Name = "lbFiliere";
+            this.lbFiliere.Size = new System.Drawing.Size(72, 24);
+            this.lbFiliere.TabIndex = 115;
+            this.lbFiliere.Text = "Filiere :";
+            // 
             // FrmInscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 502);
+            this.Controls.Add(this.cbFiliere);
+            this.Controls.Add(this.lbFiliere);
             this.Controls.Add(this.cbPass);
             this.Controls.Add(this.txtMDP);
             this.Controls.Add(this.lblMDP);
@@ -735,5 +762,7 @@ namespace GESECO.Winforms
         private Guna.UI2.WinForms.Guna2TextBox txtMDP;
         private System.Windows.Forms.Label lblMDP;
         private System.Windows.Forms.CheckBox cbPass;
+        private System.Windows.Forms.ComboBox cbFiliere;
+        private System.Windows.Forms.Label lbFiliere;
     }
 }

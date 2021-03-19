@@ -8,20 +8,20 @@ namespace _GESECO.BO
 {
     public class Admin : Personne
     {
-        public string DateEmbauche { get; private set; }
+        public DateTime DateEmbauche { get; private set; }
         public string Poste { get; set; }
 
-        public Admin()
+        public Admin() : base()
         {
 
         }
 
-        public Admin(string iD, string nom, string prenom, string dateNaissance,
-                        long contact, string lieuNaissance, string sexe, string mDP, string email,
-                        string adresse, byte[] photo, string poste)
+        public Admin(string iD, string nom, string prenom, DateTime dateNaissance,
+                    long contact, string lieuNaissance, string sexe, string mDP, string email,
+                    string adresse, byte[] photo, string poste)
             : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
         {
-            DateEmbauche = DateTime.UtcNow.ToLongDateString();
+            DateEmbauche = DateTime.Parse(DateTime.UtcNow.ToShortDateString());
             Poste = poste;
         }
 
@@ -49,7 +49,7 @@ namespace _GESECO.BO
 
         public override string ToString()
         {
-            return $"{Nom} {Prenom} {DateTime.Now.Year - DateTime.Parse(DateNaissance).Year}Ans";
+            return $"{Nom} {Prenom} {DateTime.Now.Year - DateNaissance.Year}Ans";
         }
     }
 }

@@ -1,11 +1,12 @@
 ﻿using _GESECO.BLL;
 using _GESECO.BO;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace GESECO.Winforms
 {
@@ -23,6 +24,7 @@ namespace GESECO.Winforms
             specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
             filiereBLO = new FiliereBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
+
         public FrmInscription(Action callback) : this()
         {
             this.callback = callback;
@@ -157,7 +159,7 @@ namespace GESECO.Winforms
                         matricule,
                         txtNom.Text,
                         txtPrenom.Text,
-                        DatePicker.Value.ToShortDateString(),
+                        DateTime.Parse(DatePicker.Value.ToShortDateString()),
                         long.Parse(txtTel.Text),
                         txtLieu.Text,
                         sex,
@@ -237,8 +239,14 @@ namespace GESECO.Winforms
 
         private void FrmInscription_Load(object sender, EventArgs e)
         {
+            txtNom.Focus();
             img = pbInscription.Image;
-            var specialite = specialiteBLO.GetAllSpecialites();
+
+            List<Filiere> filiere = filiereBLO.GetAllFilieres().ToList();
+            cbFiliere.DataSource = filiere;
+            cbFiliere.DisplayMember = "Nom";
+
+            List<Specialite> specialite = specialiteBLO.GetBy(x => x.FiliereS.Nom == cbFiliere.Text).ToList();
             cbSpecialite.DataSource = specialite;
             cbSpecialite.DisplayMember = "Nom";
         }
@@ -251,5 +259,11 @@ namespace GESECO.Winforms
                 txtMDP.UseSystemPasswordChar = true;
         }
 
+        private void cbFiliere_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            List<Specialite> specialite = specialiteBLO.GetBy(x => x.FiliereS.Nom == cbFiliere.Text).ToList();
+            cbSpecialite.DataSource = specialite;
+            cbSpecialite.DisplayMember = "Nom";
+        }
     }
 }

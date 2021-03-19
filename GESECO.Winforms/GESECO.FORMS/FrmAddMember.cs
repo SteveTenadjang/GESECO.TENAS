@@ -62,7 +62,7 @@ namespace GESECO.Winforms.GESECO.FORMS
                                 matricule,
                                 txtNom.Text,
                                 txtPrenom.Text,
-                                DatePicker.Value.ToShortDateString(),
+                                DateTime.Parse(DatePicker.Value.ToShortDateString()),
                                 long.Parse(txtTel.Text),
                                 txtLieu.Text,
                                 sex,

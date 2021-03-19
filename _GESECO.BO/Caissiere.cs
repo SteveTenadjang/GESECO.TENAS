@@ -8,19 +8,19 @@ namespace _GESECO.BO
 {
     public class Caissiere : Personne
     {
-        public string DateEmbauche { get; private set; }
+        public DateTime DateEmbauche { get; private set; }
 
-        public Caissiere()
+        public Caissiere() : base()
         {
-            DateEmbauche = DateTime.UtcNow.ToShortDateString();
+
         }
 
-        public Caissiere(string iD, string nom, string prenom, string dateNaissance,
+        public Caissiere(string iD, string nom, string prenom, DateTime dateNaissance,
                         long contact, string lieuNaissance, string sexe, string mDP, string email,
                         string adresse, byte[] photo)
             : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
         {
-            DateEmbauche = DateTime.UtcNow.ToShortDateString();
+            DateEmbauche = DateTime.Parse(DateTime.UtcNow.ToShortDateString());
         }
 
         public Caissiere(Caissiere c)
@@ -46,7 +46,7 @@ namespace _GESECO.BO
 
         public override string ToString()
         {
-            return $"{Nom} {Prenom} {DateTime.Now.Year - DateTime.Parse(DateNaissance).Year}Ans";
+            return $"{Nom} {Prenom} {DateTime.Now.Year - DateNaissance.Year}Ans";
         }
 
     }

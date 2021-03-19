@@ -16,7 +16,7 @@ namespace _GESECO.BLL
 
         public void SaveUser(User user)
         {
-            UserRepo.Add(user);
+            UserRepo.AddUser(user);
         }
 
         public IEnumerable<User> GetUser()

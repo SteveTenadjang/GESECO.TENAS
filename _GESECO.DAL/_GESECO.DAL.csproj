@@ -45,10 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataDAO.cs" />
+    <Compile Include="PaiementHistoryDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\_GESECO.BO\_GESECO.BO.csproj">
+      <Project>{82EAE062-800C-4F10-AE6B-CD9EA67BCD2B}</Project>
+      <Name>_GESECO.BO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

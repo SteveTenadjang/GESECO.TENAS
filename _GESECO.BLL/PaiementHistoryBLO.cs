@@ -5,22 +5,17 @@ using System.Collections.Generic;
 
 namespace _GESECO.BLL
 {
-    public class PaiementBLO
+    public class PaiementHistoryBLO
     {
-        private readonly DataDAO<Paiement> PaiementRepo;
-        public PaiementBLO(string dbFolder)
+        private readonly PaiementHistoryDAO PaiementRepo;
+        public PaiementHistoryBLO(string dbFolder)
         {
-            PaiementRepo = new DataDAO<Paiement>(dbFolder);
+            PaiementRepo = new PaiementHistoryDAO(dbFolder);
         }
 
-        public void SavePaiement(Paiement paiement)
+        public void SaveToHistory(Paiement paiement)
         {
             PaiementRepo.Add(paiement);
-        }
-
-        public void CancelPaiement(Paiement paiement)
-        {
-            PaiementRepo.Remove(paiement);
         }
 
         public IEnumerable<Paiement> GetAllPaiements()
@@ -32,9 +27,10 @@ namespace _GESECO.BLL
         {
             return PaiementRepo.Find(predicate);
         }
-        public int CountPaiement()
+
+        public int Counts()
         {
-            return PaiementRepo.CountRepo();
+            return PaiementRepo.CountHistory();
         }
 
     }

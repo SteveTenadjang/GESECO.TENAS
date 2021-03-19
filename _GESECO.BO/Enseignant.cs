@@ -5,8 +5,8 @@ namespace _GESECO.BO
 {
     public class Enseignant : Personne
     {
-        public Matiere MatiereE { get; set; }
-        //public List<Matiere> matieres = new List<Matiere>();
+        public List<Matiere> Matieres { get; set; } = new List<Matiere>();
+        public DateTime DateEmabauche { get; private set; }
 
         public Enseignant() 
             : base()
@@ -14,26 +14,21 @@ namespace _GESECO.BO
 
         }
 
-        public Enseignant(string iD, string nom, string prenom, string dateNaissance,
-            long contact, string lieuNaissance, string sexe, string mDP, string email,
-            string adresse, byte[] photo)
-            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
-        {
-
-        }
-        public Enseignant(string iD, string nom, string prenom, string dateNaissance,
+        public Enseignant(string iD, string nom, string prenom, DateTime dateNaissance,
             long contact, string lieuNaissance, string sexe, string mDP, string email,
             string adresse, byte[] photo,Matiere matiere)
             : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
         {
-            MatiereE = matiere;
+            Matieres.Add(matiere);
+            DateEmabauche = DateTime.Parse(DateTime.UtcNow.ToShortDateString());
         }
 
         public Enseignant(Enseignant e,Matiere m)
-            : base(e.ID,e.Nom,e.Prenom,e.DateNaissance,e.Contact,e.LieuNaissance,e.Sexe,e.MDP,
-                  e.Email,e.Adresse,e.Photo)
+        : base(e.ID,e.Nom,e.Prenom,e.DateNaissance,e.Contact,e.LieuNaissance,e.Sexe,e.MDP,
+            e.Email,e.Adresse,e.Photo)
         {
-            MatiereE = m;
+            e.Matieres.Add(m);
+            DateEmabauche = e.DateEmabauche;
         }
 
         public override bool Equals(object obj)
@@ -49,7 +44,7 @@ namespace _GESECO.BO
 
         public override string ToString()
         {
-            return $"{Nom} {Prenom} {DateTime.Now.Year - DateTime.Parse(DateNaissance).Year}Ans";
+            return $"{Nom} {Prenom} {DateTime.Now.Year - DateNaissance.Year}Ans";
         }
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="FiliereBLO.cs" />
     <Compile Include="MatiereBLO.cs" />
     <Compile Include="PaiementBLO.cs" />
+    <Compile Include="PaiementHistoryBLO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecialiteBLO.cs" />
     <Compile Include="TypingException.cs" />

@@ -45,16 +45,17 @@ namespace GESECO.Winforms
             this.txtAbreger = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.cbUniversity = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(194, 306);
+            this.btnSave.Location = new System.Drawing.Point(163, 306);
             this.btnSave.Margin = new System.Windows.Forms.Padding(6);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(181, 59);
+            this.btnSave.Size = new System.Drawing.Size(281, 59);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -62,14 +63,14 @@ namespace GESECO.Winforms
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(142, 62);
+            this.txtNom.Location = new System.Drawing.Point(117, 62);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(233, 29);
             this.txtNom.TabIndex = 1;
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(142, 195);
+            this.txtContact.Location = new System.Drawing.Point(117, 195);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(233, 29);
             this.txtContact.TabIndex = 2;
@@ -77,14 +78,14 @@ namespace GESECO.Winforms
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(142, 150);
+            this.txtEmail.Location = new System.Drawing.Point(117, 150);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(233, 29);
             this.txtEmail.TabIndex = 2;
             // 
             // txtAdresse
             // 
-            this.txtAdresse.Location = new System.Drawing.Point(142, 244);
+            this.txtAdresse.Location = new System.Drawing.Point(117, 244);
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.Size = new System.Drawing.Size(233, 29);
             this.txtAdresse.TabIndex = 3;
@@ -95,7 +96,7 @@ namespace GESECO.Winforms
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbLogo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbLogo.ErrorImage")));
             this.pbLogo.InitialImage = null;
-            this.pbLogo.Location = new System.Drawing.Point(401, 113);
+            this.pbLogo.Location = new System.Drawing.Point(392, 45);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(179, 134);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +107,7 @@ namespace GESECO.Winforms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 67);
+            this.label1.Location = new System.Drawing.Point(51, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 24);
             this.label1.TabIndex = 5;
@@ -115,7 +116,7 @@ namespace GESECO.Winforms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 155);
+            this.label2.Location = new System.Drawing.Point(44, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 24);
             this.label2.TabIndex = 6;
@@ -124,7 +125,7 @@ namespace GESECO.Winforms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 200);
+            this.label3.Location = new System.Drawing.Point(28, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 24);
             this.label3.TabIndex = 7;
@@ -133,7 +134,7 @@ namespace GESECO.Winforms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 249);
+            this.label4.Location = new System.Drawing.Point(10, 249);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 24);
             this.label4.TabIndex = 8;
@@ -142,7 +143,7 @@ namespace GESECO.Winforms
             // pbClose
             // 
             this.pbClose.AutoSize = true;
-            this.pbClose.Location = new System.Drawing.Point(556, 86);
+            this.pbClose.Location = new System.Drawing.Point(547, 18);
             this.pbClose.Name = "pbClose";
             this.pbClose.Size = new System.Drawing.Size(24, 24);
             this.pbClose.TabIndex = 9;
@@ -153,7 +154,7 @@ namespace GESECO.Winforms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 107);
+            this.label5.Location = new System.Drawing.Point(22, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 24);
             this.label5.TabIndex = 11;
@@ -161,7 +162,7 @@ namespace GESECO.Winforms
             // 
             // txtAbreger
             // 
-            this.txtAbreger.Location = new System.Drawing.Point(142, 104);
+            this.txtAbreger.Location = new System.Drawing.Point(117, 104);
             this.txtAbreger.Name = "txtAbreger";
             this.txtAbreger.Size = new System.Drawing.Size(233, 29);
             this.txtAbreger.TabIndex = 10;
@@ -169,7 +170,7 @@ namespace GESECO.Winforms
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(76, 32);
+            this.lblId.Location = new System.Drawing.Point(51, 32);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(37, 24);
             this.lblId.TabIndex = 13;
@@ -177,16 +178,25 @@ namespace GESECO.Winforms
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(142, 27);
+            this.txtID.Location = new System.Drawing.Point(117, 27);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(233, 29);
             this.txtID.TabIndex = 12;
+            // 
+            // cbUniversity
+            // 
+            this.cbUniversity.FormattingEnabled = true;
+            this.cbUniversity.Location = new System.Drawing.Point(392, 202);
+            this.cbUniversity.Name = "cbUniversity";
+            this.cbUniversity.Size = new System.Drawing.Size(216, 32);
+            this.cbUniversity.TabIndex = 14;
             // 
             // FrmSchool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 380);
+            this.ClientSize = new System.Drawing.Size(634, 380);
+            this.Controls.Add(this.cbUniversity);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
@@ -231,5 +241,6 @@ namespace GESECO.Winforms
         private System.Windows.Forms.TextBox txtAbreger;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ComboBox cbUniversity;
     }
 }

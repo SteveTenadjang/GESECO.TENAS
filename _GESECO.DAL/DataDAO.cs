@@ -17,6 +17,7 @@ namespace _GESECO.DAL
         private readonly FileInfo file;
 
         public DataDAO(string dbFolder)
+
         {
             this.dbFolder = dbFolder;
             file = new FileInfo(Path.Combine(this.dbFolder, FILE_NAME));
@@ -44,7 +45,6 @@ namespace _GESECO.DAL
             {
                 datas = new List<T>();
             }
-
         }
 
         public void Set(T oldData, T newData)
@@ -74,11 +74,11 @@ namespace _GESECO.DAL
 
         public void AddUser(T data)
         {
-            var index = datas.IndexOf(data);
             datas.Clear();
             datas.Add(data);
-            SaveUser();
+            Save();
         }
+
         public void Remove(T data)
         {
             datas.Remove(data);
@@ -93,27 +93,7 @@ namespace _GESECO.DAL
                 sw.WriteLine(json);
             }
         }
-        public void SaveUser()
-        {
-            using (StreamWriter sw = new StreamWriter(file.FullName, false))
-            {
-                string json = JsonConvert.SerializeObject(datas);
-                sw.WriteLine(json);
-            }
-        }
-        public void Save2()
-        {
-            using (StreamWriter sw = new StreamWriter($"{file.FullName} history", false))
-            {
-                string json = JsonConvert.SerializeObject(datas);
-                sw.WriteLine(json);
-            }
-        }
-        public void RemoveSave(T data)
-        {
-            datas.Add(data);
-            Save2();
-        }
+
         public IEnumerable<T> Find()
         {
             return new List<T>(datas);

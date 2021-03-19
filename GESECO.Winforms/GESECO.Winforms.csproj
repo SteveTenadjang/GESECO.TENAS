@@ -127,6 +127,7 @@
     <Compile Include="FrmSchool.Designer.cs">
       <DependentUpon>FrmSchool.cs</DependentUpon>
     </Compile>
+    <Compile Include="GESCO.PrintingClass\RecieptPrinting.cs" />
     <Compile Include="GESECO.FORMS\FrmAddMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,9 +208,11 @@
     </Compile>
     <Compile Include="GESECO.Reports\FrmRecuPrint.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="GESECO.Reports\FrmRecuPrint.Designer.cs">
       <DependentUpon>FrmRecuPrint.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,8 +223,10 @@
     <EmbeddedResource Include="FrmSchool.resx">
       <DependentUpon>FrmSchool.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GESCO.Prints\CertificatePrint.rdlc" />
-    <EmbeddedResource Include="GESCO.Prints\RecieptPrint.rdlc" />
+    <EmbeddedResource Include="GESECO.Prints\CertificatePrint.rdlc" />
+    <EmbeddedResource Include="GESECO.Prints\RecieptPrint.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="GESECO.FORMS\FrmAddMember.resx">
       <DependentUpon>FrmAddMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,7 +260,7 @@
     <EmbeddedResource Include="GESECO.FORMS\FrmPaiement.resx">
       <DependentUpon>FrmPaiement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GESCO.Prints\CardPrint.rdlc" />
+    <EmbeddedResource Include="GESECO.Prints\CardPrint.rdlc" />
     <EmbeddedResource Include="GESECO.Reports\FrmCardPrint.resx">
       <DependentUpon>FrmCardPrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +269,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GESECO.Reports\FrmRecuPrint.resx">
       <DependentUpon>FrmRecuPrint.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -276,6 +282,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\GESECO.Winforms.GESCO.PrintingClass.RecieptPrinting.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -301,9 +308,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GESCO.PrintingClass\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-sun-48.png" />
   </ItemGroup>

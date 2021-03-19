@@ -1,6 +1,7 @@
 ﻿using _GESECO.BLL;
 using _GESECO.BO;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Windows.Forms;
@@ -10,14 +11,16 @@ namespace GESECO.Winforms
     public partial class FrmSchool : Form
     {
         private EcoleBLO ecoleBLO;
-        private string picture; 
+        private string picture;
+        private UniversiteBLO universiteBLO;
+
         public FrmSchool()
         {
             InitializeComponent();
             ecoleBLO = new EcoleBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            universiteBLO = new UniversiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
             picture = pbLogo.ImageLocation;
 
-            CreateFiliers();
             CreateSpecialite();
         }
 
@@ -26,9 +29,43 @@ namespace GESECO.Winforms
             FiliereBLO filiereBLO = new FiliereBLO(ConfigurationManager.AppSettings["DbFolder"]);
             SpecialiteBLO specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
 
-            Filiere filiere = new Filiere("TI01", "Tenchnologie de l'Information et de la Communication", "TIC", 900000, "Diplome : DEC Durrer 2Ans");
-            Filiere filiere1 = new Filiere("BTS", "Bachelor", "BTS", 450000, "Diplome : BTS Durrer 2Ans");
-            Filiere filiere2 = new Filiere("HND", "Higher National Degree ", "HND", 900000, "Diplome : HND Durrer 2Ans");
+            Universite universite = new Universite(
+                "U001",
+                "Institute Universitaire de la cote",
+                "IUC",
+                "myIUC.com",
+                "Logbessou",
+                653051037,
+                File.ReadAllBytes(@"S:\2eme Année\T1\development multi-couches\Code\GESECO\GESECO.Winforms\GESECO.FORMS\iconT.png")
+                );
+            universiteBLO.AddUniversite(universite);
+
+            Ecole ecole1 = new Ecole("E001",
+                                     "institut informatique",
+                                     "ISTDI",
+                                     "ISTDI@myiuc.com",
+                                     "Logbessou",
+                                     65330515,
+                                    File.ReadAllBytes(@"S:\2eme Année\T1\development multi-couches\Code\GESECO\GESECO.Winforms\GESECO.FORMS\iconT.png"),
+                                    universite
+                                     );
+
+            Ecole ecole2 = new Ecole("E002",
+                                     "institut informatique de france",
+                                     "3IL",
+                                     "3IL@myiuc.com",
+                                     "Logbessou",
+                                     653305150,
+                                    File.ReadAllBytes(@"S:\2eme Année\T1\development multi-couches\Code\GESECO\GESECO.Winforms\GESECO.FORMS\iconT.png"),
+                                    universite
+                                     );
+            ecoleBLO.AddEcole(ecole1);
+            ecoleBLO.AddEcole(ecole2);
+
+
+            Filiere filiere = new Filiere("TI01", "Tenchnologie de l'Information et de la Communication", "TIC", 900000, "Diplome : DEC Durrer 2Ans",ecole2);
+            Filiere filiere1 = new Filiere("BTS", "Bachelor", "BTS", 450000, "Diplome : BTS Durrer 2Ans",ecole1);
+            Filiere filiere2 = new Filiere("HND", "Higher National Degree ", "HND", 900000, "Diplome : HND Durrer 2Ans",ecole2);
 
             filiereBLO.AddFiliere(filiere);
             filiereBLO.AddFiliere(filiere1);
@@ -58,13 +95,11 @@ namespace GESECO.Winforms
 
         }
 
-        private void CreateFiliers()
-        {
-        }
-
         private void FrmSchool_Load(object sender, EventArgs e)
         {
-
+            var universities = universiteBLO.GetAllUniversites();
+            cbUniversity.DataSource = universities;
+            cbUniversity.DisplayMember = "Nom";
         }
 
         private void btnSave_Click(object sender, EventArgs e)

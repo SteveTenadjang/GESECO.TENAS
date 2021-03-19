@@ -13,14 +13,13 @@ namespace GESECO.Winforms.GESECO.FORMS
     public partial class FrmPaiement : Form
     {
         private EtudiantBLO etudiantBLO;
-        private FiliereBLO filiereBLO;
-        private SpecialiteBLO specialiteBLO;
+        private PaiementHistoryBLO paiementHistory;
+
         public FrmPaiement()
         {
             InitializeComponent();
             etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
-            filiereBLO = new FiliereBLO(ConfigurationManager.AppSettings["DbFolder"]);
-            specialiteBLO = new SpecialiteBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            paiementHistory = new PaiementHistoryBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
 
         private void FrmPayement_Load(object sender, EventArgs e)
@@ -35,7 +34,7 @@ namespace GESECO.Winforms.GESECO.FORMS
                 List<Etudiant> etudiants = etudiantBLO.GetByID(txtMatricule.Text).ToList();
 
                 if (double.Parse(txtAmount.Text) < 5000 || string.IsNullOrEmpty(txtAmount.Text)
-                    || double.Parse(txtAmount.Text) > etudiants[0].SpecialiteE.FiliereS.Pension)
+                    || double.Parse(txtAmount.Text) > GetFees(txtMatricule.Text))
                 {
                     if(etudiants[0].SpecialiteE.FiliereS.Pension == 0)
                     {
@@ -86,26 +85,11 @@ namespace GESECO.Winforms.GESECO.FORMS
                 {
                     List<Etudiant> etudiants = etudiantBLO.GetByID(txtMatricule.Text).ToList();
 
-                    List<Specialite> specialites = specialiteBLO.GetBy(x => x.Nom.Equals(etudiants[0].SpecialiteE.Nom)).ToList();
-                    txtFiliere.Text = specialites[0].Abreger;
-
+                    txtFiliere.Text = etudiants[0].SpecialiteE.Abreger;
                     txtNom.Text = etudiants[0].Nom.ToUpper();
                     txtPrenom.Text = etudiants[0].Prenom.ToUpper();
                     picBoxPhoto.Image = etudiants[0].Photo != null ? Image.FromStream(new MemoryStream(etudiants[0].Photo)) : null;
-
-                    PaiementBLO paiementBLO = new PaiementBLO(ConfigurationManager.AppSettings["DbFolder"]);
-                    var fees = paiementBLO.GetBy(x => x.Matricule == txtMatricule.Text).ToList();
-
-                    double sommeFees = 0;
-
-                    foreach(var f in fees)
-                    {
-                        sommeFees += f.AmountPaid;
-                    }
-
-                    etudiants[0].SpecialiteE.FiliereS.PayFees(sommeFees);
-
-                    txtUnPaid.Text = $"{etudiants[0].SpecialiteE.FiliereS.Pension}Xaf";
+                    txtUnPaid.Text = $"{GetFees(etudiants[0].ID)}Xaf";
                 }
 
             }
@@ -114,5 +98,20 @@ namespace GESECO.Winforms.GESECO.FORMS
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private double GetFees(string matricule)
+        {
+            List<Paiement> pph = paiementHistory.GetBy(x => x.Matricule == matricule).ToList();
+            double amountPaid = 0;
+
+            for (int i = 0; i < pph.Count; i++)
+            {
+                amountPaid += pph[i].AmountPaid;
+            }
+
+            var etudiants = etudiantBLO.GetByID(matricule).ToList();
+            double toPay = etudiants[0].SpecialiteE.FiliereS.Pension;
+            return toPay - amountPaid;
+        }
+
     }
 }

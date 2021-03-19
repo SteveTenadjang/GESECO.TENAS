@@ -8,7 +8,7 @@ namespace _GESECO.BO
         public string Nom { get; set; }
         public int NbPlace { get; set; }
         public Specialite SpecialiteC { get; set; }
-        //public List<Etudiant> etudiants = new List<Etudiant>();
+        public List<Etudiant> Etudiants { get; set; } = new List<Etudiant>();
 
         public Classe()
         {
@@ -27,12 +27,25 @@ namespace _GESECO.BO
         {
             SpecialiteC = specialite;
         }
+        public Classe(string id,string nom, int nbPlace, Specialite specialite,Etudiant etudiant)
+            :this(id,nom,nbPlace,specialite)
+        {
+            Etudiants.Add(etudiant);
+        }
         public Classe(Classe c, Specialite s)
         {
             ID = c.ID;
             Nom = c.Nom;
             NbPlace = c.NbPlace;
             SpecialiteC = s;
+        }
+        public Classe(Classe c, Specialite s,Etudiant e)
+        {
+            ID = c.ID;
+            Nom = c.Nom;
+            NbPlace = c.NbPlace;
+            SpecialiteC = s;
+            Etudiants.Add(e);
         }
         public Classe(Classe c)
         {
