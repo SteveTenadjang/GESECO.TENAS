@@ -16,15 +16,15 @@ namespace _GESECO.BO
         }
 
         public Caissiere(string iD, string nom, string prenom, DateTime dateNaissance,
-                        long contact, string lieuNaissance, string sexe, string mDP, string email,
+                        long contact, string lieuNaissance, string sexe, string email,
                         string adresse, byte[] photo)
-            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
+            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, email, adresse, photo)
         {
             DateEmbauche = DateTime.Parse(DateTime.UtcNow.ToShortDateString());
         }
 
         public Caissiere(Caissiere c)
-            : base(c.ID, c.Nom, c.Prenom, c.DateNaissance, c.Contact, c.LieuNaissance, c.Sexe, c.MDP, c.Email, c.Adresse, c.Photo)
+            : base(c.ID, c.Nom, c.Prenom, c.DateNaissance, c.Contact, c.LieuNaissance, c.Sexe, c.Email, c.Adresse, c.Photo)
         {
             DateEmbauche = c.DateEmbauche;
         }

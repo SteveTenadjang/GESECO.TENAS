@@ -14,30 +14,30 @@ namespace _GESECO.BO
         }
 
         public Etudiant(string iD, string nom, string prenom, DateTime dateNaissance,
-            long contact, string lieuNaissance, string sexe, string mDP, string email,
+            long contact, string lieuNaissance, string sexe, string email,
             string adresse, byte[] photo, Specialite specialite)
-            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
+            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, email, adresse, photo)
         {
             SpecialiteE = specialite;
         }
 
         public Etudiant(Etudiant e)
-            : base(e.ID, e.Nom, e.Prenom, e.DateNaissance, e.Contact, e.LieuNaissance, e.Sexe, e.MDP,e.Email, e.Adresse, e.Photo)
+            : base(e.ID, e.Nom, e.Prenom, e.DateNaissance, e.Contact, e.LieuNaissance, e.Sexe,e.Email, e.Adresse, e.Photo)
         {
             SpecialiteE = e.SpecialiteE;
         }
 
         public Etudiant(Etudiant e,Matiere matiere)
-            : base(e.ID, e.Nom, e.Prenom, e.DateNaissance, e.Contact, e.LieuNaissance, e.Sexe, e.MDP,e.Email, e.Adresse, e.Photo)
+            : base(e.ID, e.Nom, e.Prenom, e.DateNaissance, e.Contact, e.LieuNaissance, e.Sexe,e.Email, e.Adresse, e.Photo)
         {
             SpecialiteE = e.SpecialiteE;
             Matieres.Add(matiere);
         }
 
         public Etudiant(string iD, string nom, string prenom, DateTime dateNaissance,
-            long contact, string lieuNaissance, string sexe, string mDP, string email,
+            long contact, string lieuNaissance, string sexe, string email,
             string adresse, byte[] photo, Specialite specialite, Matiere matiere)
-            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo) 
+            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, email, adresse, photo) 
 
         {
             SpecialiteE = specialite;

@@ -12,7 +12,6 @@ namespace _GESECO.BO
         public long Contact { get; set; }
         public string LieuNaissance { get; set; }
         public string Sexe { get; set; }
-        public string MDP { get; set; }
         public string Email { get; set; }
         public string Adresse { get; set; }
         public byte[] Photo { get; set; }
@@ -23,7 +22,7 @@ namespace _GESECO.BO
         }
 
         protected Personne(string iD, string nom, string prenom, DateTime dateNaissance, 
-            long contact, string lieuNaissance, string sexe, string mDP, string email,
+            long contact, string lieuNaissance, string sexe, string email,
             string adresse,byte[] photo)
         {
             ID = iD;
@@ -33,7 +32,6 @@ namespace _GESECO.BO
             Contact = contact;
             LieuNaissance = lieuNaissance;
             Sexe = sexe;
-            MDP = mDP;
             Email = email;
             Adresse = adresse;
             Photo = photo;
@@ -48,7 +46,6 @@ namespace _GESECO.BO
             Contact = p.Contact;
             LieuNaissance = p.LieuNaissance;
             Sexe = p.Sexe;
-            MDP = p.MDP;
             Email = p.Email;
             Adresse = p.Adresse;
             Photo = p.Photo;

@@ -59,8 +59,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.txtNom = new Guna.UI2.WinForms.Guna2TextBox();
             this.picClose = new Guna.UI2.WinForms.Guna2Button();
             this.pbInscription = new System.Windows.Forms.PictureBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtMDP = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -592,45 +590,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.pbInscription.TabStop = false;
             this.pbInscription.DoubleClick += new System.EventHandler(this.pbInscription_DoubleClick);
             // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(261, 359);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(136, 24);
-            this.guna2HtmlLabel1.TabIndex = 124;
-            this.guna2HtmlLabel1.Text = "Mot de passe :";
-            // 
-            // txtMDP
-            // 
-            this.txtMDP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMDP.BorderColor = System.Drawing.Color.Teal;
-            this.txtMDP.BorderRadius = 15;
-            this.txtMDP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMDP.DefaultText = "";
-            this.txtMDP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMDP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMDP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMDP.DisabledState.Parent = this.txtMDP;
-            this.txtMDP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMDP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMDP.FocusedState.Parent = this.txtMDP;
-            this.txtMDP.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtMDP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMDP.HoverState.Parent = this.txtMDP;
-            this.txtMDP.Location = new System.Drawing.Point(406, 359);
-            this.txtMDP.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.txtMDP.Name = "txtMDP";
-            this.txtMDP.PasswordChar = '\0';
-            this.txtMDP.PlaceholderText = "";
-            this.txtMDP.SelectedText = "";
-            this.txtMDP.ShadowDecoration.Parent = this.txtMDP;
-            this.txtMDP.Size = new System.Drawing.Size(124, 27);
-            this.txtMDP.TabIndex = 125;
-            // 
             // FrmAddMember
             // 
             this.AcceptButton = this.btnEnregistrer;
@@ -639,8 +598,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(750, 482);
-            this.Controls.Add(this.txtMDP);
-            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.picClose);
             this.Controls.Add(this.pbInscription);
             this.Controls.Add(this.DatePicker);
@@ -715,7 +672,5 @@ namespace GESECO.Winforms.GESECO.FORMS
         private Guna.UI2.WinForms.Guna2TextBox txtNom;
         private Guna.UI2.WinForms.Guna2Button picClose;
         private System.Windows.Forms.PictureBox pbInscription;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtMDP;
     }
 }

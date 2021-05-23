@@ -14,12 +14,14 @@ namespace GESECO.Winforms.GESECO.FORMS
     {
         private EtudiantBLO etudiantBLO;
         private PaiementHistoryBLO paiementHistory;
+        private PaiementBLO paiementBLO;
 
         public FrmPaiement()
         {
             InitializeComponent();
             etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
             paiementHistory = new PaiementHistoryBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            paiementBLO = new PaiementBLO(ConfigurationManager.AppSettings["DbFolder"]);
         }
 
         private void FrmPayement_Load(object sender, EventArgs e)
@@ -89,7 +91,7 @@ namespace GESECO.Winforms.GESECO.FORMS
                     txtNom.Text = etudiants[0].Nom.ToUpper();
                     txtPrenom.Text = etudiants[0].Prenom.ToUpper();
                     picBoxPhoto.Image = etudiants[0].Photo != null ? Image.FromStream(new MemoryStream(etudiants[0].Photo)) : null;
-                    txtUnPaid.Text = $"{GetFees(etudiants[0].ID)}Xaf";
+                    txtUnPaid.Text = $"{GetFees(etudiants[0].ID)}FCFA";
                 }
 
             }
@@ -101,11 +103,17 @@ namespace GESECO.Winforms.GESECO.FORMS
         private double GetFees(string matricule)
         {
             List<Paiement> pph = paiementHistory.GetBy(x => x.Matricule == matricule).ToList();
+            List<Paiement> pp = paiementBLO.GetBy(x => x.Matricule == matricule).ToList();
             double amountPaid = 0;
 
             for (int i = 0; i < pph.Count; i++)
             {
                 amountPaid += pph[i].AmountPaid;
+            }
+
+            for (int i = 0; i < pp.Count; i++)
+            {
+                amountPaid += pp[i].AmountPaid;
             }
 
             var etudiants = etudiantBLO.GetByID(matricule).ToList();

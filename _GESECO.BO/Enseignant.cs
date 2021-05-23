@@ -15,16 +15,16 @@ namespace _GESECO.BO
         }
 
         public Enseignant(string iD, string nom, string prenom, DateTime dateNaissance,
-            long contact, string lieuNaissance, string sexe, string mDP, string email,
+            long contact, string lieuNaissance, string sexe, string email,
             string adresse, byte[] photo,Matiere matiere)
-            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
+            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, email, adresse, photo)
         {
             Matieres.Add(matiere);
             DateEmabauche = DateTime.Parse(DateTime.UtcNow.ToShortDateString());
         }
 
         public Enseignant(Enseignant e,Matiere m)
-        : base(e.ID,e.Nom,e.Prenom,e.DateNaissance,e.Contact,e.LieuNaissance,e.Sexe,e.MDP,
+        : base(e.ID,e.Nom,e.Prenom,e.DateNaissance,e.Contact,e.LieuNaissance,e.Sexe,
             e.Email,e.Adresse,e.Photo)
         {
             e.Matieres.Add(m);

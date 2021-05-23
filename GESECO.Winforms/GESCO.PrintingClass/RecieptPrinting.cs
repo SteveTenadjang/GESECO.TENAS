@@ -25,7 +25,7 @@ namespace GESECO.Winforms.GESCO.PrintingClass
         public string AbregerS { get; set; }
         public string AdresseS { get; set; }
         public string EmailS { get; set; }
-        public long ContactS { get; set; }
+        public long? ContactS { get; set; }
         public byte[] LogoS { get; set; }
 
 
@@ -34,7 +34,8 @@ namespace GESECO.Winforms.GESCO.PrintingClass
 
         }
 
-        public RecieptPrinting(string iD, string nom, string prenom, long contact, string email, byte[] photo, string specialiteE, double amountPaid,double amountUnpaid)
+        public RecieptPrinting(string iD, string nom, string prenom, long contact, 
+            string email, byte[] photo, string specialiteE, double amountPaid,double amountUnpaid)
         {
             ID = iD;
             Nom = nom;
@@ -47,7 +48,9 @@ namespace GESECO.Winforms.GESCO.PrintingClass
             AmountUnpaid = amountUnpaid;
         }
 
-        public RecieptPrinting(string iD, string nom, string prenom, long contact, string email, byte[] photo, string specialiteE, double amountPaid, double amountUnpaid, string nomS, string abregerS, string adresseS, string emailS, long contactS, byte[] logoS) 
+        public RecieptPrinting(string iD, string nom, string prenom, long contact, string email,
+            byte[] photo, string specialiteE, double amountPaid, double amountUnpaid, string nomS,
+            string abregerS, string adresseS, string emailS, long? contactS, byte[] logoS) 
             : this(iD, nom, prenom, contact, email, photo, specialiteE, amountPaid, amountUnpaid)
         {
             NomS = nomS;

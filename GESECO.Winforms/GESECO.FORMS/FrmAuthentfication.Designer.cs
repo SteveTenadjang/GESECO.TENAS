@@ -273,7 +273,7 @@ namespace GESECO.Winforms.GESECO.FORMS
             this.btnSignIn.Size = new System.Drawing.Size(300, 48);
             this.btnSignIn.TabIndex = 3;
             this.btnSignIn.Text = "Connection";
-            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click_1);
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // pictureBox1
             // 

@@ -17,16 +17,16 @@ namespace _GESECO.BO
         }
 
         public Admin(string iD, string nom, string prenom, DateTime dateNaissance,
-                    long contact, string lieuNaissance, string sexe, string mDP, string email,
+                    long contact, string lieuNaissance, string sexe, string email,
                     string adresse, byte[] photo, string poste)
-            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, mDP, email, adresse, photo)
+            : base(iD, nom, prenom, dateNaissance, contact, lieuNaissance, sexe, email, adresse, photo)
         {
             DateEmbauche = DateTime.Parse(DateTime.UtcNow.ToShortDateString());
             Poste = poste;
         }
 
         public Admin(Admin a)
-            : base(a.ID, a.Nom, a.Prenom, a.DateNaissance, a.Contact, a.LieuNaissance, a.Sexe, a.MDP, a.Email, a.Adresse, a.Photo)
+            : base(a.ID, a.Nom, a.Prenom, a.DateNaissance, a.Contact, a.LieuNaissance, a.Sexe, a.Email, a.Adresse, a.Photo)
         {
             DateEmbauche = a.DateEmbauche;
             Poste = a.Poste;

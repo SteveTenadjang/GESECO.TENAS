@@ -41,7 +41,6 @@ namespace GESECO.Winforms.GESECO.FORMS
 
             DatePicker.Value = DateTime.Parse(admin.DateNaissance.ToString());
             txtPoste.Text = admin.Poste;
-            txtMDP.Text = admin.MDP;
         }
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
@@ -66,7 +65,6 @@ namespace GESECO.Winforms.GESECO.FORMS
                                 long.Parse(txtTel.Text),
                                 txtLieu.Text,
                                 sex,
-                                txtMDP.Text,
                                 txtEmail.Text,
                                 txtAdresse.Text,
                                 !string.IsNullOrEmpty(pbInscription.ImageLocation) ? File.ReadAllBytes(pbInscription.ImageLocation) : this.oldAdmin?.Photo,
@@ -102,8 +100,6 @@ namespace GESECO.Winforms.GESECO.FORMS
                 rbFemale.Checked = false;
                 DatePicker.Value = DateTime.Now;
                 txtPoste.Clear();
-                txtMDP.Clear();
-
             }
             catch (Exception ex)
             {
@@ -126,7 +122,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             txtAdresse.FillColor = Color.White;
             lblSex.BackColor = Color.Transparent;
             lblBornON.BackColor = Color.Transparent;
-            txtMDP.FillColor = Color.White;
             txtPoste.FillColor = Color.White;
 
 
@@ -163,11 +158,6 @@ namespace GESECO.Winforms.GESECO.FORMS
             {
                 text += "- Email can't be empty !\n";
                 txtEmail.FillColor = Color.LightPink;
-            }
-            if (string.IsNullOrWhiteSpace(txtMDP.Text))
-            {
-                text += "- Password can't be empty !\n";
-                txtMDP.FillColor = Color.LightPink;
             }
             if (string.IsNullOrWhiteSpace(txtPoste.Text))
             {

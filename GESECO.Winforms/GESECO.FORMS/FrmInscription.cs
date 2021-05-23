@@ -163,7 +163,6 @@ namespace GESECO.Winforms
                         long.Parse(txtTel.Text),
                         txtLieu.Text,
                         sex,
-                        txtMDP.Text,
                         txtEmail.Text,
                         txtAdresse.Text,
                         !string.IsNullOrEmpty(pbInscription.ImageLocation) ? File.ReadAllBytes(pbInscription.ImageLocation) : this.oldEtudiant?.Photo,

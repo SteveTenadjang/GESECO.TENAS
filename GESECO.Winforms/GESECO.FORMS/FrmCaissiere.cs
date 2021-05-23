@@ -27,46 +27,7 @@ namespace GESECO.Winforms.GESECO.FORMS
 
         private void dgvEtudiantInscrit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            List<RecieptPrinting> items = new List<RecieptPrinting>();
-            Paiement pp = dgvEtudiantInscrit.SelectedRows[0].DataBoundItem as Paiement;
-            List<Etudiant> ee = etudiantBLO.GetByID(pp.Matricule).ToList();
-            if (ee[0].SpecialiteE.FiliereS.Pension >= GetFees(ee[0].ID, pp.AmountPaid))
-            {
-
-                items.Add
-                (
-                    new RecieptPrinting
-                    (
-                        ee[0]?.ID,
-                        ee[0]?.Nom,
-                        ee[0]?.Prenom,
-                        ee[0].Contact,
-                        ee[0]?.Email,
-                        ee[0]?.Photo,
-                        ee[0]?.SpecialiteE.Nom,
-                        pp.AmountPaid,
-                        GetFees(ee[0].ID, pp.AmountPaid),
-                        ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Nom,
-                        ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Abreger,
-                        ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Adresse,
-                        ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Email,
-                        ee[0].SpecialiteE.FiliereS.EcoleF.UniversiteE.Contact,
-                        ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Logo
-                    )
-                );
-
-                Form f = new FrmRecuPrint("RecieptPrint.rdlc", items);
-                f.ShowDialog();
-
-                DialogResult DR = MessageBox.Show("Operation complete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (DR == DialogResult.Yes)
-                {
-                    paiementHistory.SaveToHistory(pp);
-                    paiementBLO.CancelPaiement(pp);
-                    RefreshDataGrid();
-                }
-            }
+            btnImprimer_Click(sender, e);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -86,62 +47,45 @@ namespace GESECO.Winforms.GESECO.FORMS
             dgvEtudiantInscrit.DataSource = list;
         }
 
-        private Paiement pp;
         private void btnImprimer_Click(object sender, EventArgs e)
         {
             try
             {
                 List<RecieptPrinting> items = new List<RecieptPrinting>();
-                pp = dgvEtudiantInscrit.SelectedRows[0].DataBoundItem as Paiement;
-                var pph = paiementHistory.GetAllPaiements();
+                Paiement pp = dgvEtudiantInscrit.SelectedRows[0].DataBoundItem as Paiement;
+                //var pph = paiementHistory.GetAllPaiements();
 
                 if (pp == null)
                     throw new KeyNotFoundException("Une ligne doit etre choisi");
 
-                List<Etudiant> ee = etudiantBLO.GetByID(pp.Matricule).ToList();
+                Etudiant seen = etudiantBLO.GetByID(pp.Matricule).First();
 
-                if (ee[0].SpecialiteE.FiliereS.Pension >= GetFees(ee[0].ID, pp.AmountPaid))
-                {
-                    items.Add
+                items.Add
                         (
                             new RecieptPrinting
                             (
-                                ee[0]?.ID,
-                                ee[0]?.Nom,
-                                ee[0]?.Prenom,
-                                ee[0].Contact,
-                                ee[0]?.Email,
-                                ee[0]?.Photo,
-                                ee[0]?.SpecialiteE.Nom,
+                                seen?.ID,
+                                seen?.Nom,
+                                seen?.Prenom,
+                                seen.Contact,
+                                seen?.Email,
+                                seen?.Photo,
+                                seen?.SpecialiteE.Nom,
                                 pp.AmountPaid,
-                                GetFees(ee[0].ID, pp.AmountPaid)
-                            //ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Nom,
-                            //ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Abreger,
-                            //ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Adresse,
-                            //ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Email,
-                            //ee[0].SpecialiteE.FiliereS.EcoleF.UniversiteE.Contact,
-                            //ee[0]?.SpecialiteE.FiliereS.EcoleF.UniversiteE.Logo
+                                GetFees(seen.ID, pp.AmountPaid),
+                                seen?.SpecialiteE.FiliereS.EcoleF?.UniversiteE.Nom,
+                                seen?.SpecialiteE.FiliereS.EcoleF?.UniversiteE.Abreger,
+                                seen?.SpecialiteE.FiliereS.EcoleF?.UniversiteE.Adresse,
+                                seen?.SpecialiteE.FiliereS.EcoleF?.UniversiteE.Email,
+                                seen?.SpecialiteE.FiliereS.EcoleF?.UniversiteE.Contact,
+                                seen?.SpecialiteE.FiliereS.EcoleF?.UniversiteE.Logo
                             )
                         );
 
-                    Form f = new FrmRecuPrint("RecieptPrint.rdlc", items);
-                    f.WindowState = FormWindowState.Maximized;
-                    f.FormClosed += F_FormClosed;
-                    f.Show();
-                }
-                else
-                {
-                    DialogResult DR = MessageBox.Show("Pension deja Regler! \n\n Souhaite vous annuler le paiement?",
-                                    "Pension regler",
-                                    MessageBoxButtons.YesNo,
-                                    MessageBoxIcon.Warning
-                                    );
-
-                    if(DR == DialogResult.Yes)
-                        paiementBLO.CancelPaiement(pp);
-
-                    RefreshDataGrid();
-                }
+                Form f = new FrmRecuPrint("RecieptPrint.rdlc", items);
+                f.WindowState = FormWindowState.Maximized;
+                f.FormClosed += F_FormClosed;
+                f.Show();
             }
             catch (KeyNotFoundException ex)
             {
@@ -155,11 +99,12 @@ namespace GESECO.Winforms.GESECO.FORMS
 
         private void F_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Paiement pp = dgvEtudiantInscrit.SelectedRows[0].DataBoundItem as Paiement;
             DialogResult DR = MessageBox.Show("Operation complete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (DR == DialogResult.Yes)
             {
                 paiementHistory.SaveToHistory(pp);
-                paiementBLO.CancelPaiement(pp);              
+                paiementBLO.CancelPaiement(pp);
             }
             RefreshDataGrid();
         }
@@ -169,12 +114,20 @@ namespace GESECO.Winforms.GESECO.FORMS
             List<Paiement> pph = paiementHistory.GetBy(x => x.Matricule == matricule).ToList();
             double amountPaid = currentPayement;
 
-            for(int i=0; i<pph.Count; i++)
+            for (int i = 0; i < pph.Count; i++)
                 amountPaid += pph[i].AmountPaid;
 
             var etudiants = etudiantBLO.GetByID(matricule).ToList();
             double toPay = etudiants[0].SpecialiteE.FiliereS.Pension;
-            return toPay-amountPaid;
+            return toPay - amountPaid;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Paiement pp = dgvEtudiantInscrit.SelectedRows[0].DataBoundItem as Paiement;
+            pp = dgvEtudiantInscrit.SelectedRows[0].DataBoundItem as Paiement;
+            paiementBLO.CancelPaiement(pp);
+            RefreshDataGrid();
         }
     }
 }
